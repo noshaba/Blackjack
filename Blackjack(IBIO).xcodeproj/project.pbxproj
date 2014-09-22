@@ -13,6 +13,11 @@
 		05ABD05719D031130059F5D8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05ABD05619D031130059F5D8 /* Images.xcassets */; };
 		05ABD05A19D031130059F5D8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05ABD05819D031130059F5D8 /* LaunchScreen.xib */; };
 		05ABD06619D031130059F5D8 /* Blackjack_IBIO_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ABD06519D031130059F5D8 /* Blackjack_IBIO_Tests.swift */; };
+		05ABD07019D031380059F5D8 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ABD06F19D031380059F5D8 /* Card.swift */; };
+		05ABD07219D031750059F5D8 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ABD07119D031750059F5D8 /* Deck.swift */; };
+		05ABD07419D031AA0059F5D8 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ABD07319D031AA0059F5D8 /* Player.swift */; };
+		05ABD07619D031D60059F5D8 /* Dealer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ABD07519D031D60059F5D8 /* Dealer.swift */; };
+		05ABD07819D032170059F5D8 /* Blackjack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ABD07719D032170059F5D8 /* Blackjack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +41,11 @@
 		05ABD05F19D031130059F5D8 /* Blackjack(IBIO)Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Blackjack(IBIO)Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		05ABD06419D031130059F5D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05ABD06519D031130059F5D8 /* Blackjack_IBIO_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blackjack_IBIO_Tests.swift; sourceTree = "<group>"; };
+		05ABD06F19D031380059F5D8 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		05ABD07119D031750059F5D8 /* Deck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
+		05ABD07319D031AA0059F5D8 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		05ABD07519D031D60059F5D8 /* Dealer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dealer.swift; sourceTree = "<group>"; };
+		05ABD07719D032170059F5D8 /* Blackjack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Blackjack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +87,11 @@
 		05ABD04C19D031130059F5D8 /* Blackjack(IBIO) */ = {
 			isa = PBXGroup;
 			children = (
+				05ABD07719D032170059F5D8 /* Blackjack.swift */,
+				05ABD06F19D031380059F5D8 /* Card.swift */,
+				05ABD07119D031750059F5D8 /* Deck.swift */,
+				05ABD07519D031D60059F5D8 /* Dealer.swift */,
+				05ABD07319D031AA0059F5D8 /* Player.swift */,
 				05ABD04F19D031130059F5D8 /* AppDelegate.swift */,
 				05ABD05119D031130059F5D8 /* ViewController.swift */,
 				05ABD05319D031130059F5D8 /* Main.storyboard */,
@@ -212,7 +227,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05ABD07819D032170059F5D8 /* Blackjack.swift in Sources */,
+				05ABD07219D031750059F5D8 /* Deck.swift in Sources */,
 				05ABD05219D031130059F5D8 /* ViewController.swift in Sources */,
+				05ABD07619D031D60059F5D8 /* Dealer.swift in Sources */,
+				05ABD07019D031380059F5D8 /* Card.swift in Sources */,
+				05ABD07419D031AA0059F5D8 /* Player.swift in Sources */,
 				05ABD05019D031130059F5D8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,6 +425,7 @@
 				05ABD06B19D031130059F5D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		05ABD06C19D031130059F5D8 /* Build configuration list for PBXNativeTarget "Blackjack(IBIO)Tests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +434,7 @@
 				05ABD06E19D031130059F5D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
