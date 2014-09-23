@@ -9,7 +9,7 @@
 import Foundation
 
 internal class Card {
-    private(set) var value : Int
+    internal var value : Int
     internal var hidden = false
     
     internal init(value : Int){

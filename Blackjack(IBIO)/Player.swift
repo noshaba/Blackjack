@@ -22,7 +22,7 @@ internal class Player : Person{
         if self.totalCardValue() > 21 {
             for i in 0..<self.cards.count{
                 if self.cards[i].value == 11 {
-                    self.cards[i].value == 1
+                    self.cards[i].value = 1
                     break
                 }
             }
