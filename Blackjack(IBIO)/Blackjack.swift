@@ -46,6 +46,8 @@ internal class Blackjack{
         } else if self.dealer.cardsVisible(){
             if self.dealer.hasBlackjack() && !self.player.hasBlackjack(){
                 return TurnStatus.Lost
+            } else if self.dealer.hasOver21(){
+                return TurnStatus.Win
             } else if self.dealer.totalCardValue() == self.player.totalCardValue(){
                 return TurnStatus.Push
             } else if self.dealer.totalCardValue() > self.player.totalCardValue(){

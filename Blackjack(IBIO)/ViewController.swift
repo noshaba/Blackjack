@@ -185,15 +185,13 @@ class ViewController: UIViewController {
                 self.game.dealersTurn = true
                 self.openCards()
                 self.displayCards()
+                while self.getDealer().totalCardValue() < 17{
+                    self.getDealer().hit(self.game.deck)
+                    self.openCards()
+                    self.displayCards()
+                }
                 self.result()
                 self.game.dealersTurn = false
-//                while self.getDealer().totalCardValue() < 17{
-//                    self.getDealer().hit(self.game.deck)
-//                    self.openCards()
-//                    self.displayCards()
-//                }
-//                self.result()
-//                self.game.status = .Start
             } else {
                 self.currentTask.text = "Enter either 'hit' or 'stick'!"
             }
