@@ -42,4 +42,8 @@ internal class Deck{
         self.deck.removeLast()
         return lastCard
     }
+    
+    internal func addPlayerAndDealerCards(playerCards : [Card], dealerCards : [Card]){
+        self.deck = playerCards + dealerCards + self.deck
+    }
 }

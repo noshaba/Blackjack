@@ -27,6 +27,7 @@ internal class Blackjack{
     internal let player : Player
     internal let dealer : Dealer
     internal var status = GameStatus.Start
+    private(set) var round : Int = 1
     
     internal init(){
         self.player = Player(deck : self.deck)
@@ -52,5 +53,18 @@ internal class Blackjack{
             }
         }
         return TurnStatus.Continue
+    }
+    
+    internal func newRound(){
+        self.dealer.cards[1].hidden = false
+        self.deck.addPlayerAndDealerCards(self.player.cards, dealerCards : self.dealer.cards)
+        self.player.cards = []
+        self.dealer.cards = []
+        self.player.cards += [self.deck.getCard()]
+        self.player.cards += [self.deck.getCard()]
+        self.dealer.cards += [self.deck.getCard()]
+        self.dealer.cards += [self.deck.getCard()]
+        self.dealer.cards[1].hidden = true
+        self.round++
     }
 }

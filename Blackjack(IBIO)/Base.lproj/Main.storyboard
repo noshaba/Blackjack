@@ -27,15 +27,6 @@
                                     <action selector="userInput:" destination="vXZ-lx-hvc" eventType="editingDidEndOnExit" id="gSi-R4-DIn"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M74-eB-eEb">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="28" width="368" height="115"/>
-                                </variation>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Money:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JGJ-Nc-lYb">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -126,12 +117,29 @@
                                     <rect key="frame" x="59" y="199" width="282" height="37"/>
                                 </variation>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b7x-Ja-vhL">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="35" y="108" width="330" height="36"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Info" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CIb-eH-5fb">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="40" y="59" width="320" height="41"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="EKK-g2-7xL"/>
-                                <exclude reference="M74-eB-eEb"/>
                                 <exclude reference="JGJ-Nc-lYb"/>
                                 <exclude reference="5my-zk-f4l"/>
                                 <exclude reference="F38-47-Yc9"/>
@@ -142,12 +150,13 @@
                                 <exclude reference="a4F-r9-QiL"/>
                                 <exclude reference="JfJ-oe-wQC"/>
                                 <exclude reference="aGV-hz-9Gd"/>
+                                <exclude reference="b7x-Ja-vhL"/>
+                                <exclude reference="CIb-eH-5fb"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="EKK-g2-7xL"/>
-                                <include reference="M74-eB-eEb"/>
                                 <include reference="JGJ-Nc-lYb"/>
                                 <include reference="5my-zk-f4l"/>
                                 <include reference="F38-47-Yc9"/>
@@ -158,15 +167,18 @@
                                 <include reference="a4F-r9-QiL"/>
                                 <include reference="JfJ-oe-wQC"/>
                                 <include reference="aGV-hz-9Gd"/>
+                                <include reference="b7x-Ja-vhL"/>
+                                <include reference="CIb-eH-5fb"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="betTitle" destination="QX1-k8-xT9" id="cXS-cn-u4l"/>
                         <outlet property="betValue" destination="a4F-r9-QiL" id="50D-HE-8Bc"/>
-                        <outlet property="consoleOutput" destination="M74-eB-eEb" id="J6H-8B-bWv"/>
+                        <outlet property="currentTask" destination="b7x-Ja-vhL" id="1fJ-pH-Uqy"/>
                         <outlet property="dealerCards" destination="aGV-hz-9Gd" id="IMh-kP-Ofy"/>
                         <outlet property="dealerCardsTitle" destination="Fn0-cm-MGw" id="Mkp-cr-czc"/>
+                        <outlet property="infoOutput" destination="CIb-eH-5fb" id="rT2-bn-Sgx"/>
                         <outlet property="moneyTitle" destination="JGJ-Nc-lYb" id="fyY-gg-VbG"/>
                         <outlet property="playerCards" destination="F38-47-Yc9" id="krP-mD-g9P"/>
                         <outlet property="playerCardsTitle" destination="5my-zk-f4l" id="xuk-rK-dDf"/>

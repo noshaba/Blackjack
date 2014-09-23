@@ -40,10 +40,12 @@ internal class Player : Person{
     
     internal func win(){
         self.money += self.bet
+        self.bet = 0
     }
     
     internal func winBlackjack(){
         self.money += (self.bet * 1.5)
+        self.bet = 0
     }
     
     internal func hit(deck : Deck){
