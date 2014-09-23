@@ -119,7 +119,14 @@ class ViewController: UIViewController {
             self.getPlayer().lose()
             self.displayMoneyAndBet()
             self.infoOutput.text = "You lost this round!"
+            if self.getPlayer().money == 0 {
+                self.resetWindow()
+                self.infoOutput.text = "Game Over!"
+            }
             self.newRound()
+            if self.getPlayer().money == 0{
+                self.currentTask.text = "Enter any character to restart!"
+            }
         case .Push :
             self.getPlayer().push()
             self.displayMoneyAndBet()
@@ -137,13 +144,17 @@ class ViewController: UIViewController {
             self.newRound()
         default :
             if !self.game.dealersTurn {
-                self.currentTask.text = "Would you like to hit or stick?"
+                self.currentTask.text = "Would you like to hit, stand or double?"
                 self.game.status = .HitStick
             }
         }
     }
     
     @IBAction func userInput(textField: UITextField) {
+        if self.getPlayer().money == 0 {
+            self.getPlayer().money = 100
+            self.game.status = .Start
+        }
         switch self.game.status {
         case .Start:
             if textField != "" {
@@ -179,8 +190,8 @@ class ViewController: UIViewController {
                 self.getPlayer().hit(self.game.deck)
                 self.displayCards()
                 self.result()
-            } else if textField.text == "stick" {
-                self.infoOutput.text = "You decided to stick!"
+            } else if textField.text == "stand" {
+                self.infoOutput.text = "You decided to stand!"
                 self.currentTask.text = ""
                 self.game.dealersTurn = true
                 self.openCards()
@@ -192,8 +203,33 @@ class ViewController: UIViewController {
                 }
                 self.result()
                 self.game.dealersTurn = false
+            } else if textField.text == "double" {
+                let double = self.getPlayer().bet * 2
+                if double > self.getPlayer().money{
+                    self.infoOutput.text = "Your balance is too to double!"
+                } else {
+                    self.infoOutput.text = "You decided to double!"
+                    self.getPlayer().bet *= 2
+                    self.displayCards()
+                    self.getPlayer().hit(self.game.deck)
+                    self.displayCards()
+                    self.result()
+                    self.currentTask.text = ""
+                    if self.game.turn() == TurnStatus.Continue {
+                        self.game.dealersTurn = true
+                        self.openCards()
+                        self.displayCards()
+                        while self.getDealer().totalCardValue() < 17{
+                            self.getDealer().hit(self.game.deck)
+                            self.openCards()
+                            self.displayCards()
+                        }
+                        self.result()
+                        self.game.dealersTurn = false
+                    }
+                }
             } else {
-                self.currentTask.text = "Enter either 'hit' or 'stick'!"
+                self.currentTask.text = "Enter either 'hit', 'stand' or 'double'!"
             }
         default:
             self.infoOutput.text = "Unknown Error"

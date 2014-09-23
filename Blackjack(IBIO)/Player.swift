@@ -9,7 +9,7 @@
 import Foundation
 
 internal class Player : Person{
-    private(set) var money : Double = 100
+    internal var money : Double = 100
     internal var bet : Double = 0
     
     internal init(deck : Deck){
