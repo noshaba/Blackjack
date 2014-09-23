@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		052C532719D0DA7900EE0291 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052C532619D0DA7900EE0291 /* Person.swift */; };
 		05ABD05019D031130059F5D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ABD04F19D031130059F5D8 /* AppDelegate.swift */; };
 		05ABD05219D031130059F5D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ABD05119D031130059F5D8 /* ViewController.swift */; };
 		05ABD05519D031130059F5D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05ABD05319D031130059F5D8 /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		052C532619D0DA7900EE0291 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		05ABD04A19D031130059F5D8 /* Blackjack(IBIO).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Blackjack(IBIO).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		05ABD04E19D031130059F5D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05ABD04F19D031130059F5D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				05ABD06F19D031380059F5D8 /* Card.swift */,
 				05ABD07119D031750059F5D8 /* Deck.swift */,
 				05ABD07519D031D60059F5D8 /* Dealer.swift */,
+				052C532619D0DA7900EE0291 /* Person.swift */,
 				05ABD07319D031AA0059F5D8 /* Player.swift */,
 				05ABD04F19D031130059F5D8 /* AppDelegate.swift */,
 				05ABD05119D031130059F5D8 /* ViewController.swift */,
@@ -233,6 +236,7 @@
 				05ABD07619D031D60059F5D8 /* Dealer.swift in Sources */,
 				05ABD07019D031380059F5D8 /* Card.swift in Sources */,
 				05ABD07419D031AA0059F5D8 /* Player.swift in Sources */,
+				052C532719D0DA7900EE0291 /* Person.swift in Sources */,
 				05ABD05019D031130059F5D8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

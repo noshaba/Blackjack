@@ -8,54 +8,46 @@
 
 import Foundation
 
-internal class Player{
-    private(set) var cards = [Card]()
+internal class Player : Person{
     private(set) var money : Double = 100
-    private(set) var bet : Double = 0
+    internal var bet : Double = 0
     
     internal init(deck : Deck){
+        super.init()
         self.cards += [deck.getCard()]
         self.cards += [deck.getCard()]
-    }
-    
-    internal func cardsToString() -> String {
-        var cardString = ""
-        for i in 0..<self.cards.count{
-            cardString += "\(self.cards[i].value)\t"
-        }
-        return cardString
-    }
-    
-    internal func totalCardValue() -> Int {
-        var sum = 0
-        for i in 0..<self.cards.count{
-            sum += self.cards[i].value
-        }
-        return sum
-    }
-    
-    internal func hasEleven() -> Bool {
-        var hasEleven : Bool = false
-        for i in 0..<self.cards.count{
-            if self.cards[i].value == 11 {
-                hasEleven = true
-                break
-            }
-        }
-        return hasEleven
     }
     
     internal func setAceDown() {
-        for i in 0..<self.cards.count{
-            if self.cards[i].value == 11 {
-                self.cards[i].value == 1
-                break
+        if self.totalCardValue() > 21 {
+            for i in 0..<self.cards.count{
+                if self.cards[i].value == 11 {
+                    self.cards[i].value == 1
+                    break
+                }
             }
         }
     }
     
-    internal func setBet(bet : Double) {
-        self.bet = bet
-        self.money -= bet
+    internal func lose(){
+        self.money -= self.bet
+        self.bet = 0
+    }
+    
+    internal func push(){
+        self.bet = 0
+    }
+    
+    internal func win(){
+        self.money += self.bet
+    }
+    
+    internal func winBlackjack(){
+        self.money += (self.bet * 1.5)
+    }
+    
+    internal func hit(deck : Deck){
+        self.cards += [deck.getCard()]
+        self.setAceDown()
     }
 }

@@ -20,8 +20,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var consoleOutput: UILabel!
     @IBOutlet weak var dealerCardsTitle: UILabel!
-    @IBOutlet weak var dealerCard1: UILabel!
-    @IBOutlet weak var dealerCard2: UILabel!
+    @IBOutlet weak var dealerCards: UILabel!
     @IBOutlet weak var playerCardsTitle: UILabel!
     @IBOutlet weak var playerCards: UILabel!
     @IBOutlet weak var moneyTitle: UILabel!
@@ -46,8 +45,8 @@ class ViewController: UIViewController {
     
     private func resetWindow(){
         self.dealerCardsTitle.text = ""
-        self.dealerCard1.text = ""
-        self.dealerCard2.text = ""
+        self.dealerCards.text = ""
+        self.dealerCards.numberOfLines = 0
         self.playerCardsTitle.text = ""
         self.playerCards.text = ""
         self.playerCards.numberOfLines = 0
@@ -68,8 +67,7 @@ class ViewController: UIViewController {
     
     private func displayCards(){
         self.dealerCardsTitle.text = "Dealer's Hand"
-        self.dealerCard1.text = "\(self.getDealer().card1.value)"
-        self.dealerCard2.text = "[hidden]"
+        self.dealerCards.text = self.getDealer().cardsToString()
         self.playerCardsTitle.text = "Your Hand: "
         self.playerCards.text = self.getPlayer().cardsToString()
         self.playerValueTitle.text = "Total Value of Cards: "
@@ -82,6 +80,30 @@ class ViewController: UIViewController {
     
     private func getDealer() -> Dealer {
         return self.game.dealer
+    }
+    
+    private func result(){
+        switch self.game.turn(){
+        case .Lost :
+            self.getPlayer().lose()
+            self.displayMoneyAndBet()
+            self.consoleOutput.text = "You lost this round!"
+        case .Push :
+            self.getPlayer().push()
+            self.displayMoneyAndBet()
+            self.consoleOutput.text = "Push!"
+        case .Blackjack :
+            self.getPlayer().winBlackjack()
+            self.displayMoneyAndBet()
+            self.consoleOutput.text = "You won with a Blackjack!"
+        case .Win :
+            self.getPlayer().win()
+            self.displayMoneyAndBet()
+            self.consoleOutput.text = "Congratulations! You won this round!"
+        default :
+            self.consoleOutput.text?.extend("\nWould you like to hit or stick?")
+            self.game.status = .HitStick
+        }
     }
     
     @IBAction func userInput(textField: UITextField) {
@@ -98,14 +120,28 @@ class ViewController: UIViewController {
                 if self.getPlayer().money < bet{
                     self.consoleOutput.text = "Your balance is too low!"
                 } else {
-                    self.consoleOutput.text = "Your bet is $ \(bet)"
-                    self.getPlayer().setBet(bet)
+                    self.getPlayer().bet = bet
                     self.betValue.text = "$ \(self.getPlayer().bet)"
                     self.playerMoney.text = "$ \(self.getPlayer().money)"
                     self.displayCards()
+                    self.consoleOutput.text = "Your bet is $ \(bet)"
+                    
+                    self.getPlayer().setAceDown()
+                    
+                    self.result()
                 }
             } else {
-                self.consoleOutput.text = "Unknown input!"
+                self.consoleOutput.text = "Enter a double above zero!"
+            }
+        case .HitStick:
+            if textField.text == "hit" {
+                self.getPlayer().hit(self.game.deck)
+                self.displayCards()
+                self.result()
+            } else if textField == "stick" {
+            
+            } else {
+                self.consoleOutput.text = "Enter either 'hit' or 'stick'!"
             }
         default:
             self.consoleOutput.text = "Unknown Error"

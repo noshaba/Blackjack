@@ -8,12 +8,17 @@
 
 import Foundation
 
-internal class Dealer{
-    internal let card1 : Card
-    internal let card2 : Card
+internal class Dealer : Person{
     
     internal init(deck : Deck){
-        card1 = deck.getCard()
-        card2 = deck.getCard()
+        super.init()
+        self.cards += [deck.getCard()]
+        self.cards += [deck.getCard()]
+        self.cards[1].hidden = true
     }
+    
+    internal func cardsVisible() -> Bool {
+        return !self.cards[1].hidden
+    }
+
 }

@@ -42,43 +42,25 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="216" y="318" width="79" height="26"/>
+                                    <rect key="frame" x="216" y="426" width="79" height="26"/>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Evw-UR-jaA">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Hand: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5my-zk-f4l">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="75" y="202" width="112" height="25"/>
+                                    <rect key="frame" x="35" y="303" width="330" height="26"/>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1NK-46-Egq">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F38-47-Yc9">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="206" y="200" width="122" height="29"/>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Hand: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5my-zk-f4l">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="35" y="318" width="154" height="26"/>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F38-47-Yc9">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="35" y="347" width="145" height="25"/>
+                                    <rect key="frame" x="35" y="332" width="330" height="73"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Value of Cards: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pBs-TH-1rd">
@@ -105,7 +87,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="277" y="320" width="78" height="24"/>
+                                    <rect key="frame" x="277" y="428" width="78" height="24"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bet: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QX1-k8-xT9">
@@ -114,7 +96,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="216" y="347" width="56" height="25"/>
+                                    <rect key="frame" x="216" y="455" width="56" height="25"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a4F-r9-QiL">
@@ -123,7 +105,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="277" y="351" width="51" height="21"/>
+                                    <rect key="frame" x="277" y="459" width="51" height="21"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JfJ-oe-wQC">
@@ -135,6 +117,15 @@
                                     <rect key="frame" x="35" y="457" width="67" height="21"/>
                                 </variation>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGV-hz-9Gd">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="59" y="199" width="282" height="37"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -142,8 +133,6 @@
                                 <exclude reference="EKK-g2-7xL"/>
                                 <exclude reference="M74-eB-eEb"/>
                                 <exclude reference="JGJ-Nc-lYb"/>
-                                <exclude reference="Evw-UR-jaA"/>
-                                <exclude reference="1NK-46-Egq"/>
                                 <exclude reference="5my-zk-f4l"/>
                                 <exclude reference="F38-47-Yc9"/>
                                 <exclude reference="pBs-TH-1rd"/>
@@ -152,6 +141,7 @@
                                 <exclude reference="QX1-k8-xT9"/>
                                 <exclude reference="a4F-r9-QiL"/>
                                 <exclude reference="JfJ-oe-wQC"/>
+                                <exclude reference="aGV-hz-9Gd"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -159,8 +149,6 @@
                                 <include reference="EKK-g2-7xL"/>
                                 <include reference="M74-eB-eEb"/>
                                 <include reference="JGJ-Nc-lYb"/>
-                                <include reference="Evw-UR-jaA"/>
-                                <include reference="1NK-46-Egq"/>
                                 <include reference="5my-zk-f4l"/>
                                 <include reference="F38-47-Yc9"/>
                                 <include reference="pBs-TH-1rd"/>
@@ -169,6 +157,7 @@
                                 <include reference="QX1-k8-xT9"/>
                                 <include reference="a4F-r9-QiL"/>
                                 <include reference="JfJ-oe-wQC"/>
+                                <include reference="aGV-hz-9Gd"/>
                             </mask>
                         </variation>
                     </view>
@@ -176,8 +165,7 @@
                         <outlet property="betTitle" destination="QX1-k8-xT9" id="cXS-cn-u4l"/>
                         <outlet property="betValue" destination="a4F-r9-QiL" id="50D-HE-8Bc"/>
                         <outlet property="consoleOutput" destination="M74-eB-eEb" id="J6H-8B-bWv"/>
-                        <outlet property="dealerCard1" destination="Evw-UR-jaA" id="I2I-AL-EW0"/>
-                        <outlet property="dealerCard2" destination="1NK-46-Egq" id="PWC-Dk-wIJ"/>
+                        <outlet property="dealerCards" destination="aGV-hz-9Gd" id="IMh-kP-Ofy"/>
                         <outlet property="dealerCardsTitle" destination="Fn0-cm-MGw" id="Mkp-cr-czc"/>
                         <outlet property="moneyTitle" destination="JGJ-Nc-lYb" id="fyY-gg-VbG"/>
                         <outlet property="playerCards" destination="F38-47-Yc9" id="krP-mD-g9P"/>

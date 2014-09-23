@@ -12,16 +12,20 @@ internal class Deck{
     private(set) var deck = [Card]()
     
     internal init(){
-        self.deck  = [Card](count: 4, repeatedValue: Card(value: 2))
-        self.deck += [Card](count: 4, repeatedValue: Card(value: 3))
-        self.deck += [Card](count: 4, repeatedValue: Card(value: 4))
-        self.deck += [Card](count: 4, repeatedValue: Card(value: 5))
-        self.deck += [Card](count: 4, repeatedValue: Card(value: 6))
-        self.deck += [Card](count: 4, repeatedValue: Card(value: 7))
-        self.deck += [Card](count: 4, repeatedValue: Card(value: 8))
-        self.deck += [Card](count: 4, repeatedValue: Card(value: 9))
-        self.deck += [Card](count:16, repeatedValue: Card(value:10))
-        self.deck += [Card](count: 4, repeatedValue: Card(value:11))
+        for var i = 0; i < 4; ++i {
+            self.deck.append(Card(value: 2))
+            self.deck.append(Card(value: 3))
+            self.deck.append(Card(value: 4))
+            self.deck.append(Card(value: 5))
+            self.deck.append(Card(value: 6))
+            self.deck.append(Card(value: 7))
+            self.deck.append(Card(value: 8))
+            self.deck.append(Card(value: 9))
+            self.deck.append(Card(value:11))
+        }
+        for var i = 0; i < 16; ++i {
+            self.deck.append(Card(value: 10))
+        }
         self.shuffle(self.deck)
     }
     
