@@ -12,6 +12,7 @@ enum GameStatus {
     case Start
     case Bet
     case HitStick
+    case Dealer
 }
 
 enum TurnStatus {
@@ -28,6 +29,7 @@ internal class Blackjack{
     internal let dealer : Dealer
     internal var status = GameStatus.Start
     private(set) var round : Int = 1
+    internal var dealersTurn : Bool = false
     
     internal init(){
         self.player = Player(deck : self.deck)
@@ -56,15 +58,27 @@ internal class Blackjack{
     }
     
     internal func newRound(){
+        self.round++
         self.dealer.cards[1].hidden = false
         self.deck.addPlayerAndDealerCards(self.player.cards, dealerCards : self.dealer.cards)
-        self.player.cards = []
-        self.dealer.cards = []
+        if self.round % 5 == 0 {
+            self.deck.shuffle(self.deck.deck)
+        }
+        self.player.cards.removeAll()
+        self.dealer.cards.removeAll()
         self.player.cards += [self.deck.getCard()]
         self.player.cards += [self.deck.getCard()]
         self.dealer.cards += [self.deck.getCard()]
         self.dealer.cards += [self.deck.getCard()]
         self.dealer.cards[1].hidden = true
-        self.round++
+    }
+    
+    internal func openCards(){
+        for i in 0..<self.deck.deck.count{
+            self.deck.deck[i].hidden = false
+        }
+        for i in 0..<self.dealer.cards.count{
+            self.dealer.cards[i].hidden = false
+        }
     }
 }

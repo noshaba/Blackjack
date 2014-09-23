@@ -18,8 +18,6 @@ class ViewController: UIViewController {
     
     internal let game : Blackjack = Blackjack()
     
-    //@IBOutlet weak var consoleOutput: UILabel!
-    
     @IBOutlet weak var infoOutput: UILabel!
     @IBOutlet weak var dealerCardsTitle: UILabel!
     @IBOutlet weak var currentTask: UILabel!
@@ -70,6 +68,10 @@ class ViewController: UIViewController {
         self.betValue.text = "$ \(self.getPlayer().bet)"
     }
     
+    private func openCards(){
+        self.game.openCards()
+    }
+    
     private func displayCards(){
         self.dealerCardsTitle.text = "Dealer's Hand:"
         self.dealerCards.text = self.getDealer().cardsToString()
@@ -95,7 +97,9 @@ class ViewController: UIViewController {
     
     private func newRound(){
         self.game.newRound()
-        self.infoOutput.text?.extend("\nRound \(self.game.round) of 5!\nPlace your bet!")
+        if self.game.round % 5 == 0 {
+            self.infoOutput.text?.extend("\nCards were shuffled!")
+        }
         self.currentTask.text = "Enter any character to continue!"
         self.game.status = .Start
     }
@@ -123,8 +127,10 @@ class ViewController: UIViewController {
             self.infoOutput.text = "Congratulations! You won this round!"
             self.newRound()
         default :
-            self.currentTask.text = "Would you like to hit or stick?"
-            self.game.status = .HitStick
+            if !self.game.dealersTurn {
+                self.currentTask.text = "Would you like to hit or stick?"
+                self.game.status = .HitStick
+            }
         }
     }
     
@@ -166,6 +172,19 @@ class ViewController: UIViewController {
                 self.result()
             } else if textField.text == "stick" {
                 self.infoOutput.text = "You decided to stick!"
+                self.currentTask.text = ""
+                self.game.dealersTurn = true
+                self.openCards()
+                self.displayCards()
+                self.result()
+                self.game.dealersTurn = false
+//                while self.getDealer().totalCardValue() < 17{
+//                    self.getDealer().hit(self.game.deck)
+//                    self.openCards()
+//                    self.displayCards()
+//                }
+//                self.result()
+//                self.game.status = .Start
             } else {
                 self.currentTask.text = "Enter either 'hit' or 'stick'!"
             }
