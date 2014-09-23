@@ -119,12 +119,11 @@ class ViewController: UIViewController {
             self.getPlayer().lose()
             self.displayMoneyAndBet()
             self.infoOutput.text = "You lost this round!"
-            if self.getPlayer().money == 0 {
-                self.resetWindow()
+            if self.getPlayer().money < 1 {
                 self.infoOutput.text = "Game Over!"
             }
             self.newRound()
-            if self.getPlayer().money == 0{
+            if self.getPlayer().money < 1 {
                 self.currentTask.text = "Enter any character to restart!"
             }
         case .Push :
@@ -151,7 +150,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func userInput(textField: UITextField) {
-        if self.getPlayer().money == 0 {
+        if self.getPlayer().money < 1 {
             self.getPlayer().money = 100
             self.game.status = .Start
         }
@@ -167,7 +166,7 @@ class ViewController: UIViewController {
         case .Bet:
             self.currentTask.text = "Place your bet!"
             let bet = textField.text.doubleValue
-            if bet > 0 {
+            if bet >= 1 {
                 if self.getPlayer().money < bet{
                     self.infoOutput.text = "Your balance is too low!"
                 } else {
@@ -182,7 +181,7 @@ class ViewController: UIViewController {
                     self.result()
                 }
             } else {
-                self.infoOutput.text = "Enter a double above zero!"
+                self.infoOutput.text = "Minimum bet is $1!"
             }
         case .HitStick:
             if textField.text == "hit" {
