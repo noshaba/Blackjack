@@ -18,7 +18,12 @@ internal class Dealer : Person{
     }
     
     internal func cardsVisible() -> Bool {
-        return !self.cards[1].hidden
+        for i in 0..<self.cards.count{
+            if self.cards[i].hidden {
+                return false
+            }
+        }
+        return true
     }
 
 }

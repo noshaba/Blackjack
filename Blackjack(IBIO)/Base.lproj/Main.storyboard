@@ -69,7 +69,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="162" width="368" height="22"/>
+                                    <rect key="frame" x="16" y="162" width="148" height="29"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nDC-co-aHX">
@@ -108,13 +108,13 @@
                                     <rect key="frame" x="35" y="457" width="67" height="21"/>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGV-hz-9Gd">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGV-hz-9Gd">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="59" y="199" width="282" height="37"/>
+                                    <rect key="frame" x="25" y="199" width="156" height="33"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b7x-Ja-vhL">
@@ -135,6 +135,24 @@
                                     <rect key="frame" x="40" y="59" width="320" height="41"/>
                                 </variation>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BnN-lv-w76">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="210" y="204" width="145" height="28"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Value of Cards:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZD-iS-v3N">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="202" y="162" width="163" height="29"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -152,6 +170,8 @@
                                 <exclude reference="aGV-hz-9Gd"/>
                                 <exclude reference="b7x-Ja-vhL"/>
                                 <exclude reference="CIb-eH-5fb"/>
+                                <exclude reference="BnN-lv-w76"/>
+                                <exclude reference="mZD-iS-v3N"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -169,6 +189,8 @@
                                 <include reference="aGV-hz-9Gd"/>
                                 <include reference="b7x-Ja-vhL"/>
                                 <include reference="CIb-eH-5fb"/>
+                                <include reference="BnN-lv-w76"/>
+                                <include reference="mZD-iS-v3N"/>
                             </mask>
                         </variation>
                     </view>
@@ -178,6 +200,8 @@
                         <outlet property="currentTask" destination="b7x-Ja-vhL" id="1fJ-pH-Uqy"/>
                         <outlet property="dealerCards" destination="aGV-hz-9Gd" id="IMh-kP-Ofy"/>
                         <outlet property="dealerCardsTitle" destination="Fn0-cm-MGw" id="Mkp-cr-czc"/>
+                        <outlet property="dealerValue" destination="BnN-lv-w76" id="i4D-XU-uUa"/>
+                        <outlet property="dealerValueTitle" destination="mZD-iS-v3N" id="J5M-xP-SxD"/>
                         <outlet property="infoOutput" destination="CIb-eH-5fb" id="rT2-bn-Sgx"/>
                         <outlet property="moneyTitle" destination="JGJ-Nc-lYb" id="fyY-gg-VbG"/>
                         <outlet property="playerCards" destination="F38-47-Yc9" id="krP-mD-g9P"/>

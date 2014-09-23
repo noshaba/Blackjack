@@ -25,7 +25,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var playerCardsTitle: UILabel!
     @IBOutlet weak var playerCards: UILabel!
     @IBOutlet weak var moneyTitle: UILabel!
-    @IBOutlet weak var playerMoney: UILabel!
+    @IBOutlet weak var playerMoney: UILabel!    
+    @IBOutlet weak var dealerValueTitle: UILabel!
+    @IBOutlet weak var dealerValue: UILabel!
     @IBOutlet weak var playerValueTitle: UILabel!
     @IBOutlet weak var playerValue: UILabel!
     @IBOutlet weak var betTitle: UILabel!
@@ -57,6 +59,8 @@ class ViewController: UIViewController {
         self.playerMoney.text = ""
         self.playerValueTitle.text = ""
         self.playerValue.text = ""
+        self.dealerValueTitle.text = ""
+        self.dealerValue.text = ""
         self.betTitle.text = ""
         self.betValue.text = ""
     }
@@ -79,10 +83,15 @@ class ViewController: UIViewController {
         self.playerCards.text = self.getPlayer().cardsToString()
         self.playerValueTitle.text = "Total Value of Cards: "
         self.playerValue.text = "\(self.getPlayer().totalCardValue())"
+        self.dealerValueTitle.text = "Total Value of Cards: "
+        if self.getDealer().cardsVisible(){
+            self.dealerValue.text = "\(self.getDealer().totalCardValue())"
+        }
     }
     
     private func resetCards(){
         self.dealerCards.text = ""
+        self.dealerValue.text = ""
         self.playerCards.text = ""
         self.playerValue.text = ""
     }
