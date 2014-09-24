@@ -173,10 +173,9 @@ class ViewController: UIViewController {
                     self.getPlayer().bet = bet
                     self.betValue.text = "$ \(self.getPlayer().bet)"
                     self.playerMoney.text = "$ \(self.getPlayer().money)"
-                    self.displayCards()
                     self.infoOutput.text = "Your bet is $ \(bet)"
-                    
                     self.getPlayer().setAceDown()
+                    self.displayCards()
                     
                     self.result()
                 }

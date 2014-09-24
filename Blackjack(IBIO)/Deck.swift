@@ -44,6 +44,16 @@ internal class Deck{
     }
     
     internal func addPlayerAndDealerCards(playerCards : [Card], dealerCards : [Card]){
+        for i in 0..<playerCards.count {
+            if playerCards[i].value == 1 {
+                playerCards[i].value = 11
+            }
+        }
+        for i in 0..<dealerCards.count {
+            if dealerCards[i].value == 1 {
+                dealerCards[i].value = 11
+            }
+        }
         self.deck = playerCards + dealerCards + self.deck
     }
 }
