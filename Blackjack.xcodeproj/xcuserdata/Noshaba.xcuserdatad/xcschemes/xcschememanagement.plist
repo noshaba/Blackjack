@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Blackjack(IBIO).xcscheme</key>
+		<key>Blackjack.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,12 +12,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>05ABD04919D031130059F5D8</key>
+		<key>05BB395A19E36F7D00C8D36C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>05ABD05E19D031130059F5D8</key>
+		<key>05BB396F19E36F7D00C8D36C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

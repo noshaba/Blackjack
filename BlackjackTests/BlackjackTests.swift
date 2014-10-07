@@ -1,15 +1,15 @@
 //
-//  Blackjack_IBIO_Tests.swift
-//  Blackjack(IBIO)Tests
+//  BlackjackTests.swift
+//  BlackjackTests
 //
-//  Created by Noshaba Cheema on 9/22/14.
+//  Created by Noshaba Cheema on 10/6/14.
 //  Copyright (c) 2014 Noshaba Cheema. All rights reserved.
 //
 
 import UIKit
 import XCTest
 
-class Blackjack_IBIO_Tests: XCTestCase {
+class BlackjackTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
