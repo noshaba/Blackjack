@@ -42,6 +42,10 @@ internal class Blackjack{
         self.dealer.cards += [self.shoe.getCard()]
         self.dealer.cards += [self.shoe.getCard()]
         self.dealer.cards[1].hidden = true
+        self.dealersTurn = false
+        for i in 0..<self.players.count {
+            self.players[i].turnStatus = .Start
+        }
     }
     
     internal func openCards(){

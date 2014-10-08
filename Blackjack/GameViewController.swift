@@ -173,6 +173,7 @@ class GameViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func betWindow(){
+        self.resetWindow()
         self.currentTask.text = "Place your bet!"
         self.money.text = "$ \(self.currentPlayer!.money)"
         self.bet.text = "$ \(self.currentPlayer!.bet)"
@@ -230,6 +231,13 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    private func newRound(){
+        self.game!.newRound()
+        if self.game!.round % 5 == 0 {
+            self.gameInfo.text = "Cards were shuffled!"
+        }
+    }
+    
     private func result(){
         switch self.currentPlayer!.gameStatus(self.game!.dealer){
         case .Lost :
@@ -237,6 +245,9 @@ class GameViewController: UIViewController, UITextFieldDelegate {
             self.updatePlayerCards()
             self.updatePlayersBalances()
             self.gameInfo.text = "You lost this round!"
+            if self.lastPlayer(){
+                self.game!.dealersTurn = true
+            }
             self.nextPlayer()
             if self.currentPlayer!.money < 1 {
                 self.gameInfo.text = "Game Over!"
@@ -310,6 +321,7 @@ class GameViewController: UIViewController, UITextFieldDelegate {
                 self.dealersTurn()
                 if self.lastPlayer() {
                     self.currentTask.text = "Tap the screen for a new round!"
+                    self.newRound()
                 }
             }
         }
