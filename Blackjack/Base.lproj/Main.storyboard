@@ -118,7 +118,7 @@
                                     <action selector="changePlayerAndDeckNumber" destination="Nqn-i7-GOJ" eventType="valueChanged" id="opR-S7-ix5"/>
                                 </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" minValue="3" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="kyz-OC-67U">
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" minValue="3" maxValue="8" translatesAutoresizingMaskIntoConstraints="NO" id="kyz-OC-67U">
                                 <rect key="frame" x="79" y="219" width="118" height="31"/>
                                 <color key="tintColor" red="1" green="0.99403140899999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
@@ -334,6 +334,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="6sg-Z8-ONh"/>
+        <segue reference="dCG-yd-Sjh"/>
     </inferredMetricsTieBreakers>
 </document>
