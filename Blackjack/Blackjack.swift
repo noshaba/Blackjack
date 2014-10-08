@@ -15,8 +15,8 @@ internal class Blackjack{
     internal let shoe : Shoe
     internal let dealer : Dealer
     internal let players = [Player]()
-    private(set) var round : Int = 1
     internal var dealersTurn : Bool = false
+    private(set) var round : Int = 1
     
     internal init(){
         self.shoe = Shoe(numberOfDecks: __deckNumber)
