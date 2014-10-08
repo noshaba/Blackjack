@@ -217,6 +217,7 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         if self.betBuffer >= 1 {
             if self.currentPlayer!.money < self.betBuffer{
                 self.gameInfo.text = "Your balance is too low!"
+                self.textField.hidden = false
             } else {
                 self.currentPlayer!.bet = self.betBuffer
                 self.bet.text = "$ \(self.currentPlayer!.bet)"
