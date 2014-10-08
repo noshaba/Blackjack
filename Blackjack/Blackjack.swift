@@ -26,29 +26,6 @@ internal class Blackjack{
         self.dealer = Dealer(shoe : self.shoe)
     }
     
-//    internal func turn(let currentPlayer : Player) -> GameStatus{
-//        if currentPlayer.hasBlackjack() && self.dealer.hasBlackjack() {
-//            return GameStatus.Push
-//        } else if currentPlayer.hasBlackjack() && !self.dealer.hasBlackjack(){
-//            return GameStatus.Blackjack
-//        } else if currentPlayer.hasOver21(){
-//            return GameStatus.Lost
-//        } else if self.dealer.cardsVisible(){
-//            if self.dealer.hasBlackjack() && !currentPlayer.hasBlackjack(){
-//                return GameStatus.Lost
-//            } else if self.dealer.hasOver21(){
-//                return GameStatus.Win
-//            } else if self.dealer.totalCardValue() == currentPlayer.totalCardValue(){
-//                return GameStatus.Push
-//            } else if self.dealer.totalCardValue() > currentPlayer.totalCardValue(){
-//                return GameStatus.Lost
-//            } else if self.dealer.totalCardValue() < currentPlayer.totalCardValue(){
-//                return GameStatus.Win
-//            }
-//        }
-//        return GameStatus.Continue
-//    }
-    
     internal func newRound(){
         self.round++
         self.openCards()

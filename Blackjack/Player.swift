@@ -44,17 +44,14 @@ internal class Player : Person{
     internal func gameStatus(let dealer : Dealer) -> GameStatus{
         self.setAceDown()
         dealer.setAceDown()
-        if !dealer.cardsVisible() {
-            if self.hasOver21(){
-                return GameStatus.Lost
-            }
-        } else {
+        if self.hasOver21(){
+            return GameStatus.Lost
+        }
+        if dealer.cardsVisible() {
             if self.hasBlackjack() && dealer.hasBlackjack() {
                 return GameStatus.Push
             } else if self.hasBlackjack() && !dealer.hasBlackjack(){
                 return GameStatus.Blackjack
-            } else if self.hasOver21(){
-                return GameStatus.Lost
             } else if dealer.hasBlackjack() && !self.hasBlackjack(){
                 return GameStatus.Lost
             } else if dealer.hasOver21(){

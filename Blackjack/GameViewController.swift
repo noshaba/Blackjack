@@ -72,7 +72,7 @@ class GameViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func stand(sender: UIButton) {
-        if self.currentPlayer!.turn && !self.game!.dealersTurn {
+        if self.currentPlayer!.turn && !self.game!.dealersTurn && self.currentPlayer!.gameStatus(self.game!.dealer) != .Lost {
             self.gameInfo.text = "You decided to stand!"
             if self.lastPlayer() {
                 self.game!.dealersTurn = true
@@ -82,7 +82,7 @@ class GameViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func hit(sender: UIButton) {
-        if self.currentPlayer!.turn && !self.game!.dealersTurn {
+        if self.currentPlayer!.turn && !self.game!.dealersTurn && self.currentPlayer!.gameStatus(self.game!.dealer) != .Lost {
             self.gameInfo.text = "You decided to hit!"
             self.currentPlayer!.hit(self.game!.shoe)
             self.updatePlayerCards()
@@ -91,7 +91,7 @@ class GameViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func double(sender: UIButton) {
-        if self.currentPlayer!.turn && !self.game!.dealersTurn {
+        if self.currentPlayer!.turn && !self.game!.dealersTurn && self.currentPlayer!.gameStatus(self.game!.dealer) != .Lost {
             let double = self.currentPlayer!.bet * 2
             if double > self.currentPlayer!.money {
                 self.gameInfo.text = "Your balance is too to double!"
@@ -298,13 +298,18 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         self.currentPlayer = self.game!.players[self.playerIndex]
         if self.currentPlayer!.turn {
             if !self.game!.dealersTurn {
-                self.turn()
+                if self.currentPlayer!.gameStatus(self.game!.dealer) != .Lost {
+                    self.turn()
+                } else {
+                    self.gamePlayWindow()
+                    self.gameInfo.text = "You lost this round!"
+                    self.nextPlayer()
+                }
             } else {
-                println(self.currentPlayer!.playerNumber)
                 self.gamePlayWindow()
                 self.dealersTurn()
                 if self.lastPlayer() {
-                    println("new round")
+                    self.currentTask.text = "Tap the screen for a new round!"
                 }
             }
         }
