@@ -1,6 +1,6 @@
 //
 //  Deck.swift
-//  Blackjack(IBIO)
+//  Blackjack
 //
 //  Created by Noshaba Cheema on 9/22/14.
 //  Copyright (c) 2014 Noshaba Cheema. All rights reserved.
@@ -26,34 +26,34 @@ internal class Deck{
         for var i = 0; i < 16; ++i {
             self.deck.append(Card(value: 10))
         }
-        self.shuffle(self.deck)
+     //   self.shuffle(self.deck)
     }
     
-    internal func shuffle(var list: Array<Card>){
-        for i in 0..<list.count {
-            let j = Int(arc4random_uniform(UInt32(list.count - i))) + i
-            list.insert(list.removeAtIndex(j), atIndex: i)
-        }
-        self.deck = list
-    }
-    
-    internal func getCard() -> Card {
-        let lastCard = self.deck[self.deck.count-1]
-        self.deck.removeLast()
-        return lastCard
-    }
-    
-    internal func addPlayerAndDealerCards(playerCards : [Card], dealerCards : [Card]){
-        for i in 0..<playerCards.count {
-            if playerCards[i].value == 1 {
-                playerCards[i].value = 11
-            }
-        }
-        for i in 0..<dealerCards.count {
-            if dealerCards[i].value == 1 {
-                dealerCards[i].value = 11
-            }
-        }
-        self.deck = playerCards + dealerCards + self.deck
-    }
+//    internal func shuffle(var list: Array<Card>){
+//        for i in 0..<list.count {
+//            let j = Int(arc4random_uniform(UInt32(list.count - i))) + i
+//            list.insert(list.removeAtIndex(j), atIndex: i)
+//        }
+//        self.deck = list
+//    }
+//    
+//    internal func getCard() -> Card {
+//        let lastCard = self.deck[self.deck.count-1]
+//        self.deck.removeLast()
+//        return lastCard
+//    }
+//    
+//    internal func addPlayerAndDealerCards(playerCards : [Card], dealerCards : [Card]){
+//        for i in 0..<playerCards.count {
+//            if playerCards[i].value == 1 {
+//                playerCards[i].value = 11
+//            }
+//        }
+//        for i in 0..<dealerCards.count {
+//            if dealerCards[i].value == 1 {
+//                dealerCards[i].value = 11
+//            }
+//        }
+//        self.deck = playerCards + dealerCards + self.deck
+//    }
 }

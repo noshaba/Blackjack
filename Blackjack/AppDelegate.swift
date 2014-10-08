@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  Blackjack(IBIO)
+//  Blackjack
 //
 //  Created by Noshaba Cheema on 9/22/14.
 //  Copyright (c) 2014 Noshaba Cheema. All rights reserved.

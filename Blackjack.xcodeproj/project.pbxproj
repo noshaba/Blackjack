@@ -13,8 +13,10 @@
 		050D30A819E37078000826B9 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050D30A219E37078000826B9 /* Deck.swift */; };
 		050D30A919E37078000826B9 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050D30A319E37078000826B9 /* Person.swift */; };
 		050D30AA19E37078000826B9 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050D30A419E37078000826B9 /* Player.swift */; };
+		054FCE3819E3D63E008B883E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054FCE3719E3D63E008B883E /* GameViewController.swift */; };
+		056692D419E3AC88002A10F9 /* Shoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056692D319E3AC88002A10F9 /* Shoe.swift */; };
+		056692D619E3B239002A10F9 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056692D519E3B239002A10F9 /* OptionsViewController.swift */; };
 		05BB396119E36F7D00C8D36C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BB396019E36F7D00C8D36C /* AppDelegate.swift */; };
-		05BB396319E36F7D00C8D36C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BB396219E36F7D00C8D36C /* ViewController.swift */; };
 		05BB396619E36F7D00C8D36C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05BB396419E36F7D00C8D36C /* Main.storyboard */; };
 		05BB396819E36F7D00C8D36C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05BB396719E36F7D00C8D36C /* Images.xcassets */; };
 		05BB396B19E36F7D00C8D36C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05BB396919E36F7D00C8D36C /* LaunchScreen.xib */; };
@@ -38,10 +40,12 @@
 		050D30A219E37078000826B9 /* Deck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		050D30A319E37078000826B9 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		050D30A419E37078000826B9 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		054FCE3719E3D63E008B883E /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		056692D319E3AC88002A10F9 /* Shoe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shoe.swift; sourceTree = "<group>"; };
+		056692D519E3B239002A10F9 /* OptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 		05BB395B19E36F7D00C8D36C /* Blackjack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blackjack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05BB395F19E36F7D00C8D36C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05BB396019E36F7D00C8D36C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		05BB396219E36F7D00C8D36C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		05BB396519E36F7D00C8D36C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		05BB396719E36F7D00C8D36C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		05BB396A19E36F7D00C8D36C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -92,11 +96,13 @@
 				050D309F19E37078000826B9 /* Blackjack.swift */,
 				050D30A019E37078000826B9 /* Card.swift */,
 				050D30A119E37078000826B9 /* Dealer.swift */,
+				056692D319E3AC88002A10F9 /* Shoe.swift */,
 				050D30A219E37078000826B9 /* Deck.swift */,
 				050D30A319E37078000826B9 /* Person.swift */,
 				050D30A419E37078000826B9 /* Player.swift */,
 				05BB396019E36F7D00C8D36C /* AppDelegate.swift */,
-				05BB396219E36F7D00C8D36C /* ViewController.swift */,
+				054FCE3719E3D63E008B883E /* GameViewController.swift */,
+				056692D519E3B239002A10F9 /* OptionsViewController.swift */,
 				05BB396419E36F7D00C8D36C /* Main.storyboard */,
 				05BB396719E36F7D00C8D36C /* Images.xcassets */,
 				05BB396919E36F7D00C8D36C /* LaunchScreen.xib */,
@@ -230,11 +236,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				054FCE3819E3D63E008B883E /* GameViewController.swift in Sources */,
 				050D30A819E37078000826B9 /* Deck.swift in Sources */,
-				05BB396319E36F7D00C8D36C /* ViewController.swift in Sources */,
 				05BB396119E36F7D00C8D36C /* AppDelegate.swift in Sources */,
 				050D30A519E37078000826B9 /* Blackjack.swift in Sources */,
+				056692D619E3B239002A10F9 /* OptionsViewController.swift in Sources */,
 				050D30AA19E37078000826B9 /* Player.swift in Sources */,
+				056692D419E3AC88002A10F9 /* Shoe.swift in Sources */,
 				050D30A919E37078000826B9 /* Person.swift in Sources */,
 				050D30A719E37078000826B9 /* Dealer.swift in Sources */,
 				050D30A619E37078000826B9 /* Card.swift in Sources */,

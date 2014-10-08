@@ -1,6 +1,6 @@
 //
 //  Person.swift
-//  Blackjack(IBIO)
+//  Blackjack
 //
 //  Created by Noshaba Cheema on 9/22/14.
 //  Copyright (c) 2014 Noshaba Cheema. All rights reserved.
@@ -8,8 +8,25 @@
 
 import Foundation
 
+enum TurnStatus {
+    case Start
+    case Bet
+    case HitStand
+    case Dealer
+}
+
+enum GameStatus {
+    case Lost
+    case Push
+    case Win
+    case Blackjack
+    case Continue
+}
+
 internal class Person{
     var cards = [Card]()
+    internal var turnStatus : TurnStatus = .Start
+    internal var turn : Bool = false
     
     internal func cardsToString() -> String {
         var cardString = ""
@@ -54,8 +71,8 @@ internal class Person{
         return self.cards.count > 2 && self.totalCardValue() == 21
     }
     
-    internal func hit(deck : Deck){
-        self.cards += [deck.getCard()]
+    internal func hit(shoe : Shoe){
+        self.cards += [shoe.getCard()]
         self.setAceDown()
     }
 }
