@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main Menu View Controller-->
         <scene sceneID="BHY-eR-6rX">
             <objects>
-                <viewController id="ggu-VP-iWF" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainMenuViewController" id="ggu-VP-iWF" customClass="MainMenuViewController" customModule="Blackjack" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fr4-Ty-D1H"/>
                         <viewControllerLayoutGuide type="bottom" id="Bv7-Zx-IfQ"/>

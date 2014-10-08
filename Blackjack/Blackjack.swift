@@ -53,4 +53,13 @@ internal class Blackjack{
             self.dealer.cards[i].hidden = false
         }
     }
+    
+    internal func anyPlayerTooLowBalance() -> Bool {
+        for i in 0..<self.players.count{
+            if self.players[i].money < 1 {
+                return true
+            }
+        }
+        return false
+    }
 }

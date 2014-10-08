@@ -21,6 +21,7 @@
 		05BB396819E36F7D00C8D36C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05BB396719E36F7D00C8D36C /* Images.xcassets */; };
 		05BB396B19E36F7D00C8D36C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05BB396919E36F7D00C8D36C /* LaunchScreen.xib */; };
 		05BB397719E36F7D00C8D36C /* BlackjackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BB397619E36F7D00C8D36C /* BlackjackTests.swift */; };
+		05E4378519E5058A0071AABB /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E4378419E5058A0071AABB /* MainMenuViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		05BB397019E36F7D00C8D36C /* BlackjackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlackjackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		05BB397519E36F7D00C8D36C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05BB397619E36F7D00C8D36C /* BlackjackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackjackTests.swift; sourceTree = "<group>"; };
+		05E4378419E5058A0071AABB /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				050D30A419E37078000826B9 /* Player.swift */,
 				05BB396019E36F7D00C8D36C /* AppDelegate.swift */,
 				054FCE3719E3D63E008B883E /* GameViewController.swift */,
+				05E4378419E5058A0071AABB /* MainMenuViewController.swift */,
 				056692D519E3B239002A10F9 /* OptionsViewController.swift */,
 				05BB396419E36F7D00C8D36C /* Main.storyboard */,
 				05BB396719E36F7D00C8D36C /* Images.xcassets */,
@@ -238,6 +241,7 @@
 			files = (
 				054FCE3819E3D63E008B883E /* GameViewController.swift in Sources */,
 				050D30A819E37078000826B9 /* Deck.swift in Sources */,
+				05E4378519E5058A0071AABB /* MainMenuViewController.swift in Sources */,
 				05BB396119E36F7D00C8D36C /* AppDelegate.swift in Sources */,
 				050D30A519E37078000826B9 /* Blackjack.swift in Sources */,
 				056692D619E3B239002A10F9 /* OptionsViewController.swift in Sources */,

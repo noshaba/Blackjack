@@ -237,6 +237,11 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         if self.game!.round % 5 == 0 {
             self.gameInfo.text = "Cards were shuffled!"
         }
+        if self.game!.anyPlayerTooLowBalance(){
+            let mainMenu = self.storyboard?.instantiateViewControllerWithIdentifier("MainMenuViewController") as MainMenuViewController
+            mainMenu.modalTransitionStyle = .CoverVertical
+            self.presentViewController(mainMenu, animated: true, completion: nil)
+        }
     }
     
     private func result(){
