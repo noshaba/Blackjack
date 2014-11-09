@@ -15,7 +15,6 @@ internal class Blackjack{
     internal let shoe : Shoe
     internal let dealer : Dealer
     internal let players = [Player]()
-    internal var dealersTurn : Bool = false
     private(set) var round : Int = 1
     
     internal init(){
@@ -28,27 +27,14 @@ internal class Blackjack{
     
     internal func newRound(){
         self.round++
-        self.openCards()
+        self.dealer.openCards()
         self.shoe.addPlayerAndDealerCards(self.players, dealer : self.dealer)
         if self.round % 5 == 0 {
             self.shoe.shuffle(self.shoe.cards)
         }
+        self.dealer.reset(self.shoe)
         for i in 0..<self.players.count {
-            self.players[i].cards += [self.shoe.getCard()]
-            self.players[i].cards += [self.shoe.getCard()]
-        }
-        self.dealer.cards += [self.shoe.getCard()]
-        self.dealer.cards += [self.shoe.getCard()]
-        self.dealer.cards[1].hidden = true
-        self.dealersTurn = false
-        for i in 0..<self.players.count {
-            self.players[i].turnStatus = .Start
-        }
-    }
-    
-    internal func openCards(){
-        for i in 0..<self.dealer.cards.count{
-            self.dealer.cards[i].hidden = false
+            self.players[i].reset(self.shoe)
         }
     }
     
@@ -59,5 +45,13 @@ internal class Blackjack{
             }
         }
         return false
+    }
+    
+    internal func setDealersTurn(turn : Bool){
+        self.dealer.turn = turn
+    }
+    
+    internal func dealersTurn() -> Bool {
+        return self.dealer.turn
     }
 }

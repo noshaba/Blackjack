@@ -12,16 +12,11 @@ internal class Dealer : Person{
     
     internal override init(shoe : Shoe){
         super.init(shoe: shoe)
-        self.cards[1].hidden = true
+        self.hideSecondCard()
     }
     
-    internal func cardsVisible() -> Bool {
-        for i in 0..<self.cards.count{
-            if self.cards[i].hidden {
-                return false
-            }
-        }
-        return true
+    internal override func reset(shoe : Shoe){
+        super.reset(shoe)
+        self.hideSecondCard()
     }
-
 }

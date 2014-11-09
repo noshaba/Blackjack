@@ -38,21 +38,13 @@ internal class Shoe {
     internal func addPlayerAndDealerCards(players : [Player], dealer : Dealer){
         
         for i in 0..<players.count {
-            for j in 0..<players[i].cards.count {
-                if players[i].cards[j].value == 1 {
-                    players[i].cards[j].value = 11
-                }
-            }
-            self.cards = players[i].cards + self.cards
-            players[i].cards.removeAll()
-        }
-        for i in 0..<dealer.cards.count {
-            if dealer.cards[i].value == 1 {
-                dealer.cards[i].value = 11
-            }
+            players[i].resetAces()
+            self.cards = players[i].getCards() + self.cards
+            players[i].removeCards()
         }
         
-        self.cards = dealer.cards + self.cards
-        dealer.cards.removeAll()
+        dealer.resetAces()
+        self.cards = dealer.getCards() + self.cards
+        dealer.removeCards()
     }
 }

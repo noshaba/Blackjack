@@ -63,4 +63,9 @@ internal class Player : Person{
         }
         return GameStatus.Continue
     }
+    
+    internal override func reset(shoe : Shoe){
+        super.reset(shoe)
+        self.turnStatus = .Start
+    }
 }

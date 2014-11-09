@@ -72,17 +72,17 @@ class GameViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func stand(sender: UIButton) {
-        if self.currentPlayer!.turn && !self.game!.dealersTurn && self.currentPlayer!.gameStatus(self.game!.dealer) != .Lost {
+        if self.currentPlayer!.turn && !self.game!.dealersTurn() && self.currentPlayer!.gameStatus(self.game!.dealer) != .Lost {
             self.gameInfo.text = "You decided to stand!"
             if self.lastPlayer() {
-                self.game!.dealersTurn = true
+                self.game!.setDealersTurn(true)
             }
             self.nextPlayer()
         }
     }
     
     @IBAction func hit(sender: UIButton) {
-        if self.currentPlayer!.turn && !self.game!.dealersTurn && self.currentPlayer!.gameStatus(self.game!.dealer) != .Lost {
+        if self.currentPlayer!.turn && !self.game!.dealersTurn() && self.currentPlayer!.gameStatus(self.game!.dealer) != .Lost {
             self.gameInfo.text = "You decided to hit!"
             self.currentPlayer!.hit(self.game!.shoe)
             self.updatePlayerCards()
@@ -91,7 +91,7 @@ class GameViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func double(sender: UIButton) {
-        if self.currentPlayer!.turn && !self.game!.dealersTurn && self.currentPlayer!.gameStatus(self.game!.dealer) != .Lost {
+        if self.currentPlayer!.turn && !self.game!.dealersTurn() && self.currentPlayer!.gameStatus(self.game!.dealer) != .Lost {
             let double = self.currentPlayer!.bet * 2
             if double > self.currentPlayer!.money {
                 self.gameInfo.text = "Your balance is too to double!"
@@ -102,7 +102,7 @@ class GameViewController: UIViewController, UITextFieldDelegate {
                 self.updatePlayerCards()
                 self.result()
                 if self.lastPlayer() {
-                    self.game!.dealersTurn = true
+                    self.game!.setDealersTurn(true)
                 }
                 self.nextPlayer()
             }
@@ -252,7 +252,7 @@ class GameViewController: UIViewController, UITextFieldDelegate {
             self.updatePlayersBalances()
             self.gameInfo.text = "You lost this round!"
             if self.lastPlayer(){
-                self.game!.dealersTurn = true
+                self.game!.setDealersTurn(true)
             }
             self.nextPlayer()
             if self.currentPlayer!.money < 1 {
@@ -285,7 +285,7 @@ class GameViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func dealersTurn(){
-        self.game!.openCards()
+        self.game!.dealer.openCards()
         self.updateDealerCards()
         while self.game!.dealer.totalCardValue() < 17{
             self.game!.dealer.hit(self.game!.shoe)
@@ -313,7 +313,7 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         self.game!.players[self.playerIndex].turn = true
         self.currentPlayer = self.game!.players[self.playerIndex]
         if self.currentPlayer!.turn {
-            if !self.game!.dealersTurn {
+            if !self.game!.dealersTurn() {
                 if self.currentPlayer!.gameStatus(self.game!.dealer) != .Lost {
                     self.turn()
                 } else {

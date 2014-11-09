@@ -24,61 +24,68 @@ enum GameStatus {
 }
 
 internal class Person{
-    var cards = [Card]()
     internal var turnStatus : TurnStatus = .Start
     internal var turn : Bool = false
     
+    let hand : Hand
+    
     internal init(shoe : Shoe){
-        self.cards += [shoe.getCard()]
-        self.cards += [shoe.getCard()]
-        self.setAceDown()
+        self.hand = Hand(shoe: shoe)
     }
     
     internal func cardsToString() -> String {
-        var cardString = ""
-        for i in 0..<self.cards.count{
-            if !self.cards[i].hidden {
-                cardString += "\(self.cards[i].value)\t"
-            } else {
-                cardString += "[hidden]\t"
-            }
-        }
-        return cardString
+        return self.hand.cardsToString()
     }
     
     internal func setAceDown() {
-        if self.totalCardValue() > 21 {
-            for i in 0..<self.cards.count{
-                if self.cards[i].value == 11 {
-                    self.cards[i].value = 1
-                    break
-                }
-            }
-        }
+        self.hand.setAceDown()
+    }
+    
+    internal func resetAces(){
+        self.hand.resetAces()
     }
     
     internal func totalCardValue() -> Int {
-        var sum = 0
-        for i in 0..<self.cards.count{
-            sum += self.cards[i].value
-        }
-        return sum
+        return self.hand.totalCardValue()
     }
     
     internal func hasBlackjack() -> Bool {
-        return self.cards.count == 2 && self.totalCardValue() == 21
+        return self.hand.hasBlackjack()
     }
     
     internal func hasOver21() -> Bool {
-        return self.totalCardValue() > 21
+        return self.hand.hasOver21()
     }
     
     internal func has21() -> Bool {
-        return self.cards.count > 2 && self.totalCardValue() == 21
-    }
+        return self.hand.has21()    }
     
     internal func hit(shoe : Shoe){
-        self.cards += [shoe.getCard()]
-        self.setAceDown()
+        self.hand.hit(shoe)
+    }
+    
+    internal func cardsVisible() -> Bool {
+        return self.hand.cardsVisible()
+    }
+    
+    internal func hideSecondCard(){
+        self.hand.hideSecondCard()
+    }
+    
+    internal func openCards(){
+        self.hand.openCards()
+    }
+    
+    internal func removeCards(){
+        self.hand.removeCards()
+    }
+    
+    internal func getCards() -> [Card] {
+        return self.hand.getCards()
+    }
+    
+    internal func reset(shoe : Shoe){
+        self.hand.reset(shoe)
+        self.turn = false
     }
 }
