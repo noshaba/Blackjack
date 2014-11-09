@@ -31,11 +31,11 @@ internal class Shoe {
     internal func getCard() -> Card {
         let lastCard = self.cards[self.cards.count-1]
         self.cards.removeLast()
+        println("\(self.cards.count)")
         return lastCard
     }
     
     internal func addPlayerAndDealerCards(players : [Player], dealer : Dealer){
-        self.cards.removeAll()
         
         for i in 0..<players.count {
             for j in 0..<players[i].cards.count {
@@ -43,7 +43,7 @@ internal class Shoe {
                     players[i].cards[j].value = 11
                 }
             }
-            self.cards += players[i].cards
+            self.cards = players[i].cards + self.cards
         }
         for i in 0..<dealer.cards.count {
             if dealer.cards[i].value == 1 {
@@ -51,6 +51,6 @@ internal class Shoe {
             }
         }
         
-        self.cards += dealer.cards + self.cards
+        self.cards = dealer.cards + self.cards
     }
 }

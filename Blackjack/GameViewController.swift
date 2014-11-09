@@ -289,7 +289,6 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         self.updateDealerCards()
         while self.game!.dealer.totalCardValue() < 17{
             self.game!.dealer.hit(self.game!.shoe)
-            self.game!.openCards()
             self.updateDealerCards()
         }
         self.result()
