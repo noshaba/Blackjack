@@ -16,10 +16,7 @@ internal class Player : Person{
     
     internal init(shoe : Shoe, playerNumber : Int){
         self.playerNumber = playerNumber
-        super.init()
-        self.cards += [shoe.getCard()]
-        self.cards += [shoe.getCard()]
-        self.setAceDown()
+        super.init(shoe: shoe)
     }
     
     internal func lose(){

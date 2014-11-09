@@ -34,11 +34,9 @@ internal class Blackjack{
             self.shoe.shuffle(self.shoe.cards)
         }
         for i in 0..<self.players.count {
-            self.players[i].cards.removeAll()
             self.players[i].cards += [self.shoe.getCard()]
             self.players[i].cards += [self.shoe.getCard()]
         }
-        self.dealer.cards.removeAll()
         self.dealer.cards += [self.shoe.getCard()]
         self.dealer.cards += [self.shoe.getCard()]
         self.dealer.cards[1].hidden = true

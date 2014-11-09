@@ -44,6 +44,7 @@ internal class Shoe {
                 }
             }
             self.cards = players[i].cards + self.cards
+            players[i].cards.removeAll()
         }
         for i in 0..<dealer.cards.count {
             if dealer.cards[i].value == 1 {
@@ -52,5 +53,6 @@ internal class Shoe {
         }
         
         self.cards = dealer.cards + self.cards
+        dealer.cards.removeAll()
     }
 }

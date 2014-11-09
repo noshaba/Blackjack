@@ -10,12 +10,9 @@ import Foundation
 
 internal class Dealer : Person{
     
-    internal init(shoe : Shoe){
-        super.init()
-        self.cards += [shoe.getCard()]
-        self.cards += [shoe.getCard()]
+    internal override init(shoe : Shoe){
+        super.init(shoe: shoe)
         self.cards[1].hidden = true
-        self.setAceDown()
     }
     
     internal func cardsVisible() -> Bool {

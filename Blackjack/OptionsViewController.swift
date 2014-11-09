@@ -31,4 +31,7 @@ class OptionsViewController: UIViewController {
         __deckNumber = Int(deckSlider.value)
     }
     
+    @IBAction func AISwitch(sender: UISwitch) { 
+    }
+    
 }

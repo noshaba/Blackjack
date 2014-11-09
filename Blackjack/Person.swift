@@ -28,6 +28,12 @@ internal class Person{
     internal var turnStatus : TurnStatus = .Start
     internal var turn : Bool = false
     
+    internal init(shoe : Shoe){
+        self.cards += [shoe.getCard()]
+        self.cards += [shoe.getCard()]
+        self.setAceDown()
+    }
+    
     internal func cardsToString() -> String {
         var cardString = ""
         for i in 0..<self.cards.count{
