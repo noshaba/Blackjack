@@ -46,8 +46,7 @@ class GameViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.textField.delegate = self
-        //self.textField.keyboardType = UIKeyboardType.NumberPad
+        self.textField.keyboardType = UIKeyboardType.NumberPad
         self.game = Blackjack()
         self.gameInfo.numberOfLines = 0
         self.currentTask.numberOfLines = 0

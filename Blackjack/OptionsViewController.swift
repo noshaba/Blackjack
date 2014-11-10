@@ -16,6 +16,8 @@ class OptionsViewController: UIViewController {
     @IBOutlet weak var deckSlider: UISlider!
     
     override func viewDidLoad() {
+        __playerNumber = Int(self.playerSlider.value)
+        __deckNumber = Int(self.deckSlider.value)
         super.viewDidLoad()
     }
 
@@ -25,10 +27,10 @@ class OptionsViewController: UIViewController {
     }
     
     @IBAction func changePlayerAndDeckNumber() {
-        self.playerNumber.text = "\(Int(playerSlider.value))"
-        __playerNumber = Int(playerSlider.value)
-        self.deckNumber.text = "\(Int(deckSlider.value))"
-        __deckNumber = Int(deckSlider.value)
+        self.playerNumber.text = "\(Int(self.playerSlider.value))"
+        __playerNumber = Int(self.playerSlider.value)
+        self.deckNumber.text = "\(Int(self.deckSlider.value))"
+        __deckNumber = Int(self.deckSlider.value)
     }
     
     @IBAction func AISwitch(sender: UISwitch) { 
