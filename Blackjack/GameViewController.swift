@@ -169,7 +169,6 @@ class GameViewController: UIViewController, UITextFieldDelegate {
                             self.infoBG.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1, 1)
                             }, completion: { finished in
                                 self.gameInfo.hidden = false
-                                println("blubb")
                         })
                 })
         })
