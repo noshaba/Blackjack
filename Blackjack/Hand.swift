@@ -10,7 +10,20 @@ import Foundation
 import UIKit
 
 internal class Hand{
-    var cards = [Card]()
+    internal enum Status : Character{
+        case Hard = "H", Soft = "S"
+    }
+    
+    var status : Status {
+        for card in self.cards {
+            if card.value == 11{
+                return .Soft
+            }
+        }
+        return .Hard
+    }
+    
+    internal var cards = [Card]()
     internal var turnStatus : TurnStatus = .Start
     internal var turn : Bool = false
     

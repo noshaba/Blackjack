@@ -7,3 +7,18 @@
 //
 
 import Foundation
+
+internal class AI : Player {
+    
+    var dealersUpCard : Card
+    
+    internal init(shoe : Shoe, playerNumber : Int, dealersUpCard : Card){
+        self.dealersUpCard = dealersUpCard
+        super.init(shoe: shoe, playerNumber: playerNumber)
+    }
+    
+    internal func turn(){
+        
+    }
+    
+}
