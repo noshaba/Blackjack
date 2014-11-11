@@ -10,6 +10,7 @@ import Foundation
 
 internal var __playerNumber = 2
 internal var __deckNumber = 3
+internal var __AI = false
 
 internal class Blackjack{
     internal let shoe : Shoe
@@ -19,10 +20,14 @@ internal class Blackjack{
     
     internal init(){
         self.shoe = Shoe(numberOfDecks: __deckNumber)
-        for var i = 0; i < __playerNumber; ++i {
-            self.players.append(Player(shoe : self.shoe, playerNumber : i+1))
-        }
         self.dealer = Dealer(shoe : self.shoe)
+        for var i = 0; i < __playerNumber; ++i {
+            if i == __playerNumber - 1 && __AI{
+                self.players.append(AI(shoe : self.shoe, playerNumber : i+1, dealersUpCard: self.dealer.getUpCard()))
+            } else {
+                self.players.append(Player(shoe : self.shoe, playerNumber : i+1))
+            }
+        }
     }
     
     internal func newRound(){

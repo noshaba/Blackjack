@@ -19,4 +19,8 @@ internal class Dealer : Person{
         super.reset(shoe)
         self.hideSecondCard()
     }
+    
+    internal func getUpCard() -> Card {
+        return self.hand.cards[1]
+    }
 }

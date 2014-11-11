@@ -66,7 +66,18 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    @IBAction func stand(sender: UIButton) {
+    private func aiMove(ai: AI){
+        switch ai.move(){
+        case AI.Move.Double:
+            self.double()
+        case AI.Move.Stand:
+            self.stand()
+        default:
+            self.hit()
+        }
+    }
+    
+    private func stand(){
         if self.currentPlayer!.turn && !self.game!.dealersTurn() && self.currentPlayer!.gameStatus(self.game!.dealer) != .Lost {
             self.gameInfo.text = "You decided to stand!"
             if self.lastPlayer() {
@@ -76,16 +87,7 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    @IBAction func hit(sender: UIButton) {
-        if self.currentPlayer!.turn && !self.game!.dealersTurn() && self.currentPlayer!.gameStatus(self.game!.dealer) != .Lost {
-            self.gameInfo.text = "You decided to hit!"
-            self.currentPlayer!.hit(self.game!.shoe)
-            self.updatePlayerCards()
-            self.result()
-        }
-    }
-    
-    @IBAction func double(sender: UIButton) {
+    private func double(){
         if self.currentPlayer!.turn && !self.game!.dealersTurn() && self.currentPlayer!.gameStatus(self.game!.dealer) != .Lost {
             if !self.currentPlayer!.firstTwoCards(){
                 self.gameInfo.text = "You can only double on the first two cards!"
@@ -106,6 +108,27 @@ class GameViewController: UIViewController, UITextFieldDelegate {
                 }
             }
         }
+    }
+    
+    private func hit(){
+        if self.currentPlayer!.turn && !self.game!.dealersTurn() && self.currentPlayer!.gameStatus(self.game!.dealer) != .Lost {
+            self.gameInfo.text = "You decided to hit!"
+            self.currentPlayer!.hit(self.game!.shoe)
+            self.updatePlayerCards()
+            self.result()
+        }
+    }
+    
+    @IBAction func stand(sender: UIButton) {
+        self.stand()
+    }
+    
+    @IBAction func hit(sender: UIButton) {
+        self.hit()
+    }
+    
+    @IBAction func double(sender: UIButton) {
+        self.double()
     }
     
     
@@ -185,6 +208,12 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         self.betTitle.hidden = false
         self.textField.hidden = false
         self.playerTitle.hidden = false
+        if let ai = self.currentPlayer! as? AI {
+            ai.bet()
+            ai.turnStatus = .HitStand
+            self.betConfirmationButton.hidden = true
+            self.nextPlayer()
+        }
     }
     
     private func gamePlayWindow(){
@@ -208,6 +237,10 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         self.bet.text = "\(self.currentPlayer!.bet)"
         self.cardValueDealer.text = "?"
         self.currentTask.text = "Would you like to hit, stand or double?"
+        if let ai = self.currentPlayer! as? AI {
+            self.aiMove(ai)
+            self.playerNumber.text! += " (AI)"
+        }
     }
     
     private func nextPlayer(){
@@ -282,6 +315,7 @@ class GameViewController: UIViewController, UITextFieldDelegate {
             if self.currentPlayer!.turnStatus != .Dealer {
                 self.currentTask.text = "Would you like to hit, stand or double?"
                 self.currentPlayer!.turnStatus = .HitStand
+                self.gamePlayWindow()
             }
         }
     }

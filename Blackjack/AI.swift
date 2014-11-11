@@ -21,7 +21,16 @@ internal class AI : Player {
         super.init(shoe: shoe, playerNumber: playerNumber)
     }
     
+    internal func bet(){
+        if self.bet < 5 {
+            self.bet = 1
+        } else {
+            self.bet = 5
+        }
+    }
+    
     internal func move() -> Move{
+        // Strategy is 'Wizard's Simple Stragy'
         for key in self.hand.status.keys{
             if key == Hand.Status.Soft{
                 switch self.hand.status[key]!{
