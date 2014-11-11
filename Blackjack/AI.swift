@@ -10,6 +10,10 @@ import Foundation
 
 internal class AI : Player {
     
+    enum Move : Character{
+        case Hit = "H", Stand = "S", Double = "D"
+    }
+    
     var dealersUpCard : Card
     
     internal init(shoe : Shoe, playerNumber : Int, dealersUpCard : Card){
@@ -17,8 +21,57 @@ internal class AI : Player {
         super.init(shoe: shoe, playerNumber: playerNumber)
     }
     
-    internal func turn(){
-        
+    internal func move() -> Move{
+        for key in self.hand.status.keys{
+            if key == Hand.Status.Soft{
+                switch self.hand.status[key]!{
+                case 13...15:
+                    return .Hit
+                case 16...18:
+                    switch self.dealersUpCard.value {
+                    case 2...6:
+                        return .Double
+                    default:
+                        return .Hit
+                    }
+                case 19...21:
+                    return .Stand
+                default:
+                    return .Hit
+                }
+            } else {
+                switch self.hand.status[key]!{
+                case 4...8:
+                    return .Hit
+                case 9:
+                    switch self.dealersUpCard.value {
+                    case 2...6:
+                        return .Double
+                    default:
+                        return .Hit
+                    }
+                case 10,11:
+                    switch self.dealersUpCard.value {
+                    case 2...6:
+                        return .Double
+                    default:
+                        return .Hit
+                    }
+                case 12...16:
+                    switch self.dealersUpCard.value {
+                    case 2...6:
+                        return .Stand
+                    default:
+                        return .Hit
+                    }
+                case 17...21:
+                    return .Stand
+                default:
+                    return .Hit
+                }
+            }
+        }
+        return .Hit
     }
     
 }

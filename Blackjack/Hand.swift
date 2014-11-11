@@ -10,17 +10,18 @@ import Foundation
 import UIKit
 
 internal class Hand{
+    
     internal enum Status : Character{
         case Hard = "H", Soft = "S"
     }
     
-    var status : Status {
+    var status : Dictionary<Status,Int> {
         for card in self.cards {
             if card.value == 11{
-                return .Soft
+                return [.Soft: self.totalCardValue()]
             }
         }
-        return .Hard
+        return [.Hard: self.totalCardValue()]
     }
     
     internal var cards = [Card]()
