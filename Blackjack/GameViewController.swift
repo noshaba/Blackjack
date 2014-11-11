@@ -57,8 +57,8 @@ class GameViewController: UIViewController, UITextFieldDelegate {
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         self.textField.resignFirstResponder()
         self.view.endEditing(true)
-        self.currentPlayer!.undrawCards()
         if !self.currentPlayer!.turn{
+            self.currentPlayer!.undrawCards()
             self.playerIndex += 1
             self.run()
         }
@@ -169,8 +169,8 @@ class GameViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func updatePlayersBalances(){
-        self.money.text = "\(self.currentPlayer!.money)"
-        self.bet.text = "\(self.currentPlayer!.bet)"
+        self.money.text = "$ \(self.currentPlayer!.money)"
+        self.bet.text = "$ \(self.currentPlayer!.bet)"
     }
     
     private func resetWindow(){
@@ -210,7 +210,8 @@ class GameViewController: UIViewController, UITextFieldDelegate {
             ai.turnStatus = .HitStand
             self.betConfirmationButton.hidden = true
             self.textField.hidden = true
-            self.bet.text = "\(ai.bet)"
+            self.bet.text = "$ \(ai.bet)"
+            self.playerNumber.text = "AI"
             self.nextPlayer()
         }
     }
@@ -230,13 +231,13 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         self.updatePlayerCards()
         self.cardValuePlayer.text = "\(self.currentPlayer!.totalCardValue())"
         self.updateDealerCards()
-        self.money.text = "\(self.currentPlayer!.money)"
-        self.bet.text = "\(self.currentPlayer!.bet)"
+        self.money.text = "$ \(self.currentPlayer!.money)"
+        self.bet.text = "$ \(self.currentPlayer!.bet)"
         self.cardValueDealer.text = ""
         self.currentTask.text = "Would you like to hit, stand or double?"
         if let ai = self.currentPlayer! as? AI {
             self.aiMove(ai)
-            self.playerNumber.text! += " (AI)"
+            self.playerNumber.text = "AI"
         }
     }
     
