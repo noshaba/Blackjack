@@ -177,19 +177,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Hand:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7pp-UR-ylL">
-                                <rect key="frame" x="15" y="303" width="151" height="31"/>
+                                <rect key="frame" x="17" y="303" width="151" height="31"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.99403140899999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sum:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NWH-uv-NkB">
-                                <rect key="frame" x="16" y="399" width="158" height="27"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="0.99403140899999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i7h-5u-AlR">
-                                <rect key="frame" x="16" y="428" width="158" height="27"/>
+                                <rect key="frame" x="17" y="398" width="158" height="27"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.99403140899999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -206,18 +200,6 @@
                                 <color key="textColor" red="1" green="0.99403140899999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dealer's Cards" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umO-U9-bmx">
-                                <rect key="frame" x="17" y="240" width="288" height="49"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="0.99403140899999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Cards" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vov-eE-3eT">
-                                <rect key="frame" x="15" y="342" width="288" height="49"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="0.99403140899999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2el-TM-7b6">
                                 <rect key="frame" x="112" y="167" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -226,12 +208,6 @@
                                     <action selector="placeBet" destination="VSa-y7-8ly" eventType="editingDidBegin" id="ge2-64-1je"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Money:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eUW-gR-X9n">
-                                <rect key="frame" x="16" y="518" width="67" height="27"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="0.99403140899999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bet:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tII-Lr-uP4">
                                 <rect key="frame" x="175" y="518" width="67" height="27"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -324,6 +300,18 @@
                                     <segue destination="ggu-VP-iWF" kind="show" id="vFc-hh-fVM"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Money:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eUW-gR-X9n">
+                                <rect key="frame" x="17" y="518" width="67" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.99403140899999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i7h-5u-AlR">
+                                <rect key="frame" x="17" y="428" width="158" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.99403140899999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.011457554070000001" green="0.31593919840000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -335,7 +323,6 @@
                         <outlet property="cardValueDealer" destination="HGf-6k-9Xe" id="zAZ-kp-vPF"/>
                         <outlet property="cardValuePlayer" destination="i7h-5u-AlR" id="TRD-hL-19k"/>
                         <outlet property="currentTask" destination="e5h-ml-76l" id="jlY-RA-eMn"/>
-                        <outlet property="dealersCards" destination="umO-U9-bmx" id="WUh-3G-rum"/>
                         <outlet property="dealersHandTitle" destination="LKv-my-vjJ" id="CrT-7r-9by"/>
                         <outlet property="doubleButton" destination="EYd-wO-pOG" id="9mp-3S-4RO"/>
                         <outlet property="gameInfo" destination="juV-4t-Ehf" id="cce-qK-Frg"/>
@@ -344,7 +331,6 @@
                         <outlet property="moneyTitle" destination="eUW-gR-X9n" id="ZAv-M6-N9j"/>
                         <outlet property="playerNumber" destination="3nC-Rm-4Bl" id="9eS-fq-TuS"/>
                         <outlet property="playerTitle" destination="XAG-s6-Pbr" id="kPW-ql-7hM"/>
-                        <outlet property="playersCards" destination="vov-eE-3eT" id="sxZ-fd-TGs"/>
                         <outlet property="playersHandTitle" destination="7pp-UR-ylL" id="utS-h1-4oE"/>
                         <outlet property="standButton" destination="Y6f-76-BnR" id="UmP-oT-5PZ"/>
                         <outlet property="sumTitleDealer" destination="l6M-VD-kIV" id="P4Y-nt-5wY"/>

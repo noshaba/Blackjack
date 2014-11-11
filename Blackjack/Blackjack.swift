@@ -54,4 +54,8 @@ internal class Blackjack{
     internal func dealersTurn() -> Bool {
         return self.dealer.turn
     }
+    
+    internal func undrawCards() {
+        self.shoe.undrawCards()
+    }
 }

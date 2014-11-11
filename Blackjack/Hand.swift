@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 internal class Hand{
     var cards = [Card]()
@@ -17,18 +18,6 @@ internal class Hand{
         self.cards += [shoe.getCard()]
         self.cards += [shoe.getCard()]
         self.setAceDown()
-    }
-    
-    internal func cardsToString() -> String {
-        var cardString = ""
-        for i in 0..<self.cards.count{
-            if !self.cards[i].hidden {
-                cardString += "\(self.cards[i].value)\t"
-            } else {
-                cardString += "[hidden]\t"
-            }
-        }
-        return cardString
     }
     
     internal func setAceDown() {
@@ -46,7 +35,6 @@ internal class Hand{
         for i in 0..<self.cards.count{
             if self.cards[i].value == 1 {
                 self.cards[i].value = 11
-                break
             }
         }
     }
@@ -86,11 +74,13 @@ internal class Hand{
     }
     
     internal func hideSecondCard(){
-        self.cards[1].hidden = true
+        self.cards[0].hidden = true
+        self.cards[0].turnCard()
     }
     
     internal func openCards(){
-        self.cards[1].hidden = false
+        self.cards[0].hidden = false
+        self.cards[0].turnCard()
     }
     
     internal func removeCards(){
@@ -102,8 +92,21 @@ internal class Hand{
     }
     
     internal func reset(shoe : Shoe){
+        self.undrawCards()
         self.cards += [shoe.getCard()]
         self.cards += [shoe.getCard()]
         self.setAceDown()
+    }
+    
+    internal func drawCards(posY : CGFloat, view : UIView){
+        for i in 0..<self.cards.count{
+            self.cards[i].draw(CGFloat(17 + i * 10),posY: posY,view: view)
+        }
+    }
+    
+    internal func undrawCards(){
+        for card in self.cards {
+            card.undraw()
+        }
     }
 }

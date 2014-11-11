@@ -18,13 +18,11 @@ class GameViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var sumTitleDealer: UILabel!
     @IBOutlet weak var cardValueDealer: UILabel!
     @IBOutlet weak var dealersHandTitle: UILabel!
-    @IBOutlet weak var dealersCards: UILabel!
     @IBOutlet weak var gameInfo: UILabel!
     @IBOutlet weak var currentTask: UILabel!
     @IBOutlet weak var playersHandTitle: UILabel!
     @IBOutlet weak var playerTitle: UILabel!
     @IBOutlet weak var playerNumber: UILabel!
-    @IBOutlet weak var playersCards: UILabel!
     @IBOutlet weak var sumTitlePlayer: UILabel!
     @IBOutlet weak var cardValuePlayer: UILabel!
     @IBOutlet weak var standButton: UIButton!
@@ -50,9 +48,6 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         self.game = Blackjack()
         self.gameInfo.numberOfLines = 0
         self.currentTask.numberOfLines = 0
-        self.dealersCards.numberOfLines = 0
-        self.playersCards.numberOfLines = 0
-        self.resetWindow()
         self.run()
     }
 
@@ -64,6 +59,7 @@ class GameViewController: UIViewController, UITextFieldDelegate {
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         self.textField.resignFirstResponder()
         self.view.endEditing(true)
+        self.currentPlayer!.undrawCards()
         if !self.currentPlayer!.turn{
             self.playerIndex += 1
             self.run()
@@ -133,13 +129,17 @@ class GameViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func updatePlayerCards(){
-        self.playersCards.text = self.currentPlayer!.cardsToString()
         self.cardValuePlayer.text = "\(self.currentPlayer!.totalCardValue())"
+        self.currentPlayer!.drawCards(self.playersHandTitle.frame.origin.y+40, view: self.view)
+    }
+    
+    private func undrawCards(){
+        self.game!.undrawCards()
     }
     
     private func updateDealerCards(){
-        self.dealersCards.text = self.game!.dealer.cardsToString()
         self.cardValueDealer.text = "\(self.game!.dealer.totalCardValue())"
+        self.game!.dealer.drawCards(self.dealersHandTitle.frame.origin.y+40, view: self.view)
     }
     
     private func updatePlayersBalances(){
@@ -151,8 +151,7 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         self.gameInfo.text = ""
         self.currentTask.text = ""
         self.cardValueDealer.text = ""
-        self.dealersCards.text = ""
-        self.playersCards.text = ""
+        self.undrawCards()
         self.money.text = ""
         self.bet.text = ""
         self.cardValuePlayer.text = ""
@@ -198,9 +197,9 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         self.gameInfo.text = ""
         self.currentTask.text = ""
         self.playerNumber.text = "\(self.currentPlayer!.playerNumber)"
-        self.playersCards.text = self.currentPlayer!.cardsToString()
+        self.updatePlayerCards()
         self.cardValuePlayer.text = "\(self.currentPlayer!.totalCardValue())"
-        self.dealersCards.text = self.game!.dealer.cardsToString()
+        self.updateDealerCards()
         self.money.text = "\(self.currentPlayer!.money)"
         self.bet.text = "\(self.currentPlayer!.bet)"
         self.cardValueDealer.text = "?"

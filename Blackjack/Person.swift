@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum TurnStatus {
     case Start
@@ -31,10 +32,6 @@ internal class Person{
     
     internal init(shoe : Shoe){
         self.hand = Hand(shoe: shoe)
-    }
-    
-    internal func cardsToString() -> String {
-        return self.hand.cardsToString()
     }
     
     internal func setAceDown() {
@@ -87,5 +84,13 @@ internal class Person{
     internal func reset(shoe : Shoe){
         self.hand.reset(shoe)
         self.turn = false
+    }
+    
+    internal func drawCards(posY : CGFloat, view : UIView){
+        self.hand.drawCards(posY,view: view)
+    }
+    
+    internal func undrawCards(){
+        self.hand.undrawCards()
     }
 }

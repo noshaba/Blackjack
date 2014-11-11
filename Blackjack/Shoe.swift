@@ -47,4 +47,10 @@ internal class Shoe {
         self.cards = dealer.getCards() + self.cards
         dealer.removeCards()
     }
+    
+    internal func undrawCards(){
+        for card in self.cards {
+            card.undraw()
+        }
+    }
 }

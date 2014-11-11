@@ -12,19 +12,14 @@ internal class Deck{
     private(set) var deck = [Card]()
     
     internal init(){
-        for var i = 0; i < 4; ++i {
-            self.deck.append(Card(value: 2))
-            self.deck.append(Card(value: 3))
-            self.deck.append(Card(value: 4))
-            self.deck.append(Card(value: 5))
-            self.deck.append(Card(value: 6))
-            self.deck.append(Card(value: 7))
-            self.deck.append(Card(value: 8))
-            self.deck.append(Card(value: 9))
-            self.deck.append(Card(value:11))
-        }
-        for var i = 0; i < 16; ++i {
-            self.deck.append(Card(value: 10))
+        let Ranks = [Card.Rank.Ace, Card.Rank.King, Card.Rank.Queen, Card.Rank.Jack, Card.Rank.Ten, Card.Rank.Nine, Card.Rank.Eight, Card.Rank.Seven, Card.Rank.Six, Card.Rank.Five, Card.Rank.Four, Card.Rank.Three, Card.Rank.Two]
+        let Suits = [Card.Suit.Clubs, Card.Suit.Spades, Card.Suit.Hearts, Card.Suit.Diamonds]
+        var image = 0
+        for rank in Ranks {
+            for suit in Suits {
+                image++
+                self.deck.append(Card(rank: rank, suit: suit, image: String(image), imageBack: "b2fv"))
+            }
         }
     }
 }
