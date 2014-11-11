@@ -80,7 +80,7 @@ class GameViewController: UIViewController, UITextFieldDelegate {
     private func stand(){
         if self.currentPlayer!.turn && !self.game!.dealersTurn() && self.currentPlayer!.gameStatus(self.game!.dealer) != .Lost {
             self.gameInfo.text = "You decided to stand!"
-            self.infoBG.hidden = false
+            self.infoBGAnimation()
             if self.lastPlayer() {
                 self.game!.setDealersTurn(true)
             }
@@ -92,15 +92,15 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         if self.currentPlayer!.turn && !self.game!.dealersTurn() && self.currentPlayer!.gameStatus(self.game!.dealer) != .Lost {
             if !self.currentPlayer!.firstTwoCards(){
                 self.gameInfo.text = "You can only double on the first two cards!"
-                self.infoBG.hidden = false
+                self.infoBGAnimation()
             } else {
                 let double = self.currentPlayer!.bet * 2
                 if double > self.currentPlayer!.money {
                     self.gameInfo.text = "Your balance is too to double!"
-                    self.infoBG.hidden = false
+                    self.infoBGAnimation()
                 } else {
                     self.gameInfo.text = "You decided to double!"
-                    self.infoBG.hidden = false
+                    self.infoBGAnimation()
                     self.currentPlayer!.bet *= 2
                     self.currentPlayer!.hit(self.game!.shoe)
                     self.updatePlayerCards()
@@ -117,7 +117,7 @@ class GameViewController: UIViewController, UITextFieldDelegate {
     private func hit(){
         if self.currentPlayer!.turn && !self.game!.dealersTurn() && self.currentPlayer!.gameStatus(self.game!.dealer) != .Lost {
             self.gameInfo.text = "You decided to hit!"
-            self.infoBG.hidden = false
+            self.infoBGAnimation()
             self.currentPlayer!.hit(self.game!.shoe)
             self.updatePlayerCards()
             self.result()
@@ -154,6 +154,25 @@ class GameViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    private func infoBGAnimation(){
+        self.gameInfo.hidden = true
+        self.infoBG.hidden = false
+        UIView.animateWithDuration(0.01, delay: 0, options: .CurveEaseInOut, animations: {
+                self.infoBG.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0, 0)
+            }, completion: { finished in
+                UIView.animateWithDuration(0.25, delay: 0, options: .CurveEaseInOut, animations: {
+                    self.infoBG.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.1, 1.1)
+                    }, completion: { finished in
+                        UIView.animateWithDuration(0.25, delay: 0, options: .CurveEaseInOut, animations: {
+                            self.infoBG.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1, 1)
+                            }, completion: { finished in
+                                self.gameInfo.hidden = false
+                                println("blubb")
+                        })
+                })
+        })
     }
     
     private func lastPlayer() -> Bool{
@@ -255,20 +274,20 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         if self.betBuffer >= 1 {
             if self.currentPlayer!.money < self.betBuffer{
                 self.gameInfo.text = "Your balance is too low!"
-                self.infoBG.hidden = false
+                self.infoBGAnimation()
                 self.textField.hidden = false
             } else {
                 self.currentPlayer!.bet = self.betBuffer
                 self.bet.text = "$ \(self.currentPlayer!.bet)"
                 self.gameInfo.text = "Your bet is $ \(self.currentPlayer!.bet)"
-                self.infoBG.hidden = false
+                self.infoBGAnimation()
                 self.currentPlayer!.turnStatus = .HitStand
                 self.betConfirmationButton.hidden = true
                 self.nextPlayer()
             }
         } else {
             self.gameInfo.text = "Minimum bet is $1!"
-            self.infoBG.hidden = false
+            self.infoBGAnimation()
             self.textField.hidden = false
         }
     }
@@ -277,7 +296,7 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         self.game!.newRound()
         if self.game!.round % 5 == 0 {
             self.gameInfo.text = "Cards were shuffled!"
-            self.infoBG.hidden = false
+            self.infoBGAnimation()
         }
         if self.game!.anyPlayerTooLowBalance(){
             let mainMenu = self.storyboard?.instantiateViewControllerWithIdentifier("MainMenuViewController") as MainMenuViewController
@@ -293,35 +312,35 @@ class GameViewController: UIViewController, UITextFieldDelegate {
             self.updatePlayerCards()
             self.updatePlayersBalances()
             self.gameInfo.text = "You lost this round!"
-            self.infoBG.hidden = false
+            self.infoBGAnimation()
             if self.lastPlayer(){
                 self.game!.setDealersTurn(true)
             }
             self.nextPlayer()
             if self.currentPlayer!.money < 1 {
                 self.gameInfo.text = "Game Over!"
-                self.infoBG.hidden = false
+                self.infoBGAnimation()
             }
         case .Push :
             self.currentPlayer!.push()
             self.updatePlayerCards()
             self.updatePlayersBalances()
             self.gameInfo.text = "Push!"
-            self.infoBG.hidden = false
+            self.infoBGAnimation()
             self.nextPlayer()
         case .Blackjack :
             self.currentPlayer!.winBlackjack()
             self.updatePlayerCards()
             self.updatePlayersBalances()
             self.gameInfo.text = "You won with a Blackjack!"
-            self.infoBG.hidden = false
+            self.infoBGAnimation()
             self.nextPlayer()
         case .Win :
             self.currentPlayer!.win()
             self.updatePlayerCards()
             self.updatePlayersBalances()
             self.gameInfo.text = "Congratulations! You won this round!"
-            self.infoBG.hidden = false
+            self.infoBGAnimation()
             self.nextPlayer()
         default :
             if self.currentPlayer!.turnStatus != .Dealer {
@@ -367,7 +386,7 @@ class GameViewController: UIViewController, UITextFieldDelegate {
                 } else {
                     self.gamePlayWindow()
                     self.gameInfo.text = "You lost this round!"
-                    self.infoBG.hidden = false
+                    self.infoBGAnimation()
                     self.nextPlayer()
                 }
             } else {
