@@ -87,19 +87,23 @@ class GameViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func double(sender: UIButton) {
         if self.currentPlayer!.turn && !self.game!.dealersTurn() && self.currentPlayer!.gameStatus(self.game!.dealer) != .Lost {
-            let double = self.currentPlayer!.bet * 2
-            if double > self.currentPlayer!.money {
-                self.gameInfo.text = "Your balance is too to double!"
+            if !self.currentPlayer!.firstTwoCards(){
+                self.gameInfo.text = "You can only double on the first two cards!"
             } else {
-                self.gameInfo.text = "You decided to double!"
-                self.currentPlayer!.bet *= 2
-                self.currentPlayer!.hit(self.game!.shoe)
-                self.updatePlayerCards()
-                self.result()
-                if self.lastPlayer() {
-                    self.game!.setDealersTurn(true)
+                let double = self.currentPlayer!.bet * 2
+                if double > self.currentPlayer!.money {
+                    self.gameInfo.text = "Your balance is too to double!"
+                } else {
+                    self.gameInfo.text = "You decided to double!"
+                    self.currentPlayer!.bet *= 2
+                    self.currentPlayer!.hit(self.game!.shoe)
+                    self.updatePlayerCards()
+                    self.result()
+                    if self.lastPlayer() {
+                        self.game!.setDealersTurn(true)
+                    }
+                    self.nextPlayer()
                 }
-                self.nextPlayer()
             }
         }
     }

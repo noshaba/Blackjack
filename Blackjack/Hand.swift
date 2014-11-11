@@ -109,4 +109,8 @@ internal class Hand{
             card.undraw()
         }
     }
+    
+    internal func firstTwoCards() -> Bool {
+        return self.cards.count == 2
+    }
 }

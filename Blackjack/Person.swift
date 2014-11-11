@@ -93,4 +93,8 @@ internal class Person{
     internal func undrawCards(){
         self.hand.undrawCards()
     }
+    
+    internal func firstTwoCards() -> Bool {
+        return self.hand.firstTwoCards()
+    }
 }
