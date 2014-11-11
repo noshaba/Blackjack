@@ -15,7 +15,6 @@ extension String {
 }
 
 class GameViewController: UIViewController, UITextFieldDelegate {
-    @IBOutlet weak var sumTitleDealer: UILabel!
     @IBOutlet weak var cardValueDealer: UILabel!
     @IBOutlet weak var dealersHandTitle: UILabel!
     @IBOutlet weak var gameInfo: UILabel!
@@ -23,7 +22,6 @@ class GameViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var playersHandTitle: UILabel!
     @IBOutlet weak var playerTitle: UILabel!
     @IBOutlet weak var playerNumber: UILabel!
-    @IBOutlet weak var sumTitlePlayer: UILabel!
     @IBOutlet weak var cardValuePlayer: UILabel!
     @IBOutlet weak var standButton: UIButton!
     @IBOutlet weak var hitButton: UIButton!
@@ -184,12 +182,10 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         self.bet.text = ""
         self.cardValuePlayer.text = ""
         self.playerNumber.text = ""
-        self.sumTitleDealer.hidden = true
         self.dealersHandTitle.hidden = true
         self.playersHandTitle.hidden = true
         self.moneyTitle.hidden = true
         self.betTitle.hidden = true
-        self.sumTitlePlayer.hidden = true
         self.playerTitle.hidden = true
         self.standButton.hidden = true
         self.hitButton.hidden = true
@@ -220,12 +216,10 @@ class GameViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func gamePlayWindow(){
-        self.sumTitleDealer.hidden = false
         self.dealersHandTitle.hidden = false
         self.playersHandTitle.hidden = false
         self.moneyTitle.hidden = false
         self.betTitle.hidden = false
-        self.sumTitlePlayer.hidden = false
         self.playerTitle.hidden = false
         self.standButton.hidden = false
         self.hitButton.hidden = false
@@ -238,7 +232,7 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         self.updateDealerCards()
         self.money.text = "\(self.currentPlayer!.money)"
         self.bet.text = "\(self.currentPlayer!.bet)"
-        self.cardValueDealer.text = "?"
+        self.cardValueDealer.text = ""
         self.currentTask.text = "Would you like to hit, stand or double?"
         if let ai = self.currentPlayer! as? AI {
             self.aiMove(ai)
