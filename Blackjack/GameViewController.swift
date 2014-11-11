@@ -234,6 +234,8 @@ class GameViewController: UIViewController, UITextFieldDelegate {
             self.betConfirmationButton.hidden = true
             self.textField.hidden = true
             self.bet.text = "$ \(ai.bet)"
+            self.gameInfo.text = "Your bet is $ \(ai.bet)!"
+            self.infoBGAnimation()
             self.playerNumber.text = "AI"
             self.nextPlayer()
         }
