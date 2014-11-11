@@ -75,6 +75,7 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         default:
             self.hit()
         }
+        println(ai.move().rawValue)
     }
     
     private func stand(){
@@ -212,6 +213,8 @@ class GameViewController: UIViewController, UITextFieldDelegate {
             ai.bet()
             ai.turnStatus = .HitStand
             self.betConfirmationButton.hidden = true
+            self.textField.hidden = true
+            self.bet.text = "\(ai.bet)"
             self.nextPlayer()
         }
     }

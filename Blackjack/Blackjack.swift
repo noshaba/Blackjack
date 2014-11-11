@@ -41,6 +41,11 @@ internal class Blackjack{
         for i in 0..<self.players.count {
             self.players[i].reset(self.shoe)
         }
+        if __AI {
+            if let ai = self.players.last as? AI{
+                ai.dealersUpCard = self.dealer.getUpCard()
+            }
+        }
     }
     
     internal func anyPlayerTooLowBalance() -> Bool {

@@ -14,7 +14,7 @@ internal class AI : Player {
         case Hit = "H", Stand = "S", Double = "D"
     }
     
-    var dealersUpCard : Card
+    internal var dealersUpCard : Card
     
     internal init(shoe : Shoe, playerNumber : Int, dealersUpCard : Card){
         self.dealersUpCard = dealersUpCard
@@ -22,7 +22,7 @@ internal class AI : Player {
     }
     
     internal func bet(){
-        if self.bet < 5 {
+        if self.money < 5 {
             self.bet = 1
         } else {
             self.bet = 5
@@ -32,6 +32,9 @@ internal class AI : Player {
     internal func move() -> Move{
         // Strategy is 'Wizard's Simple Stragy'
         for key in self.hand.status.keys{
+            print(key.rawValue)
+            println("\(self.hand.status[key]!)")
+            println("\(self.dealersUpCard.value)")
             if key == Hand.Status.Soft{
                 switch self.hand.status[key]!{
                 case 13...15:

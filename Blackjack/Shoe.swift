@@ -31,7 +31,6 @@ internal class Shoe {
     internal func getCard() -> Card {
         let lastCard = self.cards[self.cards.count-1]
         self.cards.removeLast()
-        println("\(self.cards.count)")
         return lastCard
     }
     
